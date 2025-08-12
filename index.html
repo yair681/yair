@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יאיר - דפי נחיתה ופתרונות תוכנה | מומחה לדפי נחיתה ופיתוח אפליקציות</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;}
+        body {font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);}
+        .container {max-width:1200px;margin:0 auto;padding:0 20px;}
+        header {background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:1rem 0;position:fixed;width:100%;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.1);transition:background 0.3s ease;}
+        nav {display:flex;justify-content:space-between;align-items:center;}
+        .logo {font-size:1.8rem;font-weight:bold;color:white;}
+        .nav-links {display:flex;list-style:none;gap:2rem;}
+        .nav-links a {color:white;text-decoration:none;font-weight:500;transition:all 0.3s ease;cursor:pointer;}
+        .nav-links a:hover {color:#FFD700;transform:translateY(-2px);}
+        .hero {min-height:100vh;display:flex;align-items:center;text-align:center;color:white;position:relative;overflow:hidden;}
+        .hero::before {content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0 0v20h100V0z" fill="rgba(255,255,255,0.05)"/><path d="M0 10l25-5 25 5 25-5 25 5v10H0z" fill="rgba(255,255,255,0.02)"/></svg>');animation:float 6s ease-in-out infinite;}
+        @keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+        .hero-content h1 {font-size:3.5rem;margin-bottom:1rem;font-weight:800;text-shadow:2px 2px 4px rgba(0,0,0,0.3);animation:slideInRight 1s ease-out;}
+        .hero-content p {font-size:1.3rem;margin-bottom:2rem;opacity:0.9;animation:slideInLeft 1s ease-out 0.3s both;}
+        .cta-button {display:inline-block;background:linear-gradient(45deg,#FFD700,#FFA500);color:#333;padding:15px 40px;border-radius:50px;text-decoration:none;font-weight:bold;font-size:1.1rem;transition:all 0.3s ease;box-shadow:0 10px 30px rgba(255,215,0,0.3);animation:slideInUp 1s ease-out 0.6s both;border:none;cursor:pointer;}
+        .cta-button:hover {transform:translateY(-5px);box-shadow:0 15px 40px rgba(255,215,0,0.4);}
+        @keyframes slideInRight {from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes slideInLeft {from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes slideInUp {from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+        .services {padding:5rem 0;background:white;}
+        .section-title {text-align:center;font-size:2.5rem;margin-bottom:3rem;color:#333;}
+        .services-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;}
+        .service-card {background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);padding:2rem;border-radius:15px;text-align:center;transition:all 0.3s ease;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+        .service-card:hover {transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.2);}
+        .service-icon {font-size:3rem;color:#667eea;margin-bottom:1rem;}
+        .service-card h3 {font-size:1.5rem;margin-bottom:1rem;color:#333;}
+        .service-card p {color:#666;line-height:1.6;}
+        .portfolio-teaser {padding:5rem 0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;text-align:center;}
+        .portfolio-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem;}
+        .portfolio-preview {background:rgba(255,255,255,0.1);padding:2rem;border-radius:15px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);transition:all 0.3s ease;}
+        .portfolio-preview:hover {transform:translateY(-5px);background:rgba(255,255,255,0.15);}
+        .portfolio-preview h4 {margin-bottom:0.5rem;font-size:1.3rem;}
+        .portfolio-preview p {opacity:0.9;font-size:1rem;margin-bottom:1rem;}
+        .project-stats {margin:0.8rem 0;font-size:0.9rem;color:rgba(255,255,255,0.8);}
+        .project-stats i {color:#FFD700;margin-left:5px;}
+        .demo-link {display:inline-block;background:rgba(255,215,0,0.2);color:#FFD700;padding:8px 16px;border-radius:20px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.3s ease;}
+        .demo-link:hover {background:rgba(255,215,0,0.3);transform:translateY(-2px);}
+        .about {padding:5rem 0;background:white;}
+        .about-content {display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+        .about-text h2 {font-size:2.5rem;margin-bottom:1rem;color:#333;}
+        .about-text p {font-size:1.1rem;color:#666;margin-bottom:1rem;}
+        .stats {display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .stat {text-align:center;padding:1rem;background:#f8f9fa;border-radius:10px;}
+        .stat-number {font-size:2rem;font-weight:bold;color:#667eea;}
+        .stat-label {color:#666;font-size:0.9rem;}
+        .contact {padding:5rem 0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;text-align:center;}
+        .contact-form {max-width:600px;margin:2rem auto;display:grid;gap:1rem;}
+        .form-group {display:grid;gap:1rem;}
+        .form-row {display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+        input,textarea {padding:15px;border:none;border-radius:10px;font-size:1rem;background:rgba(255,255,255,0.9);color:#333;}
+        input:focus,textarea:focus {outline:none;background:white;}
+        .submit-button {background:linear-gradient(45deg,#FFD700,#FFA500);color:#333;padding:15px 30px;border:none;border-radius:25px;font-weight:bold;cursor:pointer;transition:all 0.3s ease;font-size:1rem;}
+        .submit-button:hover {transform:translateY(-2px);box-shadow:0 5px 15px rgba(255,215,0,0.3);}
+        footer {background:#333;color:white;text-align:center;padding:2rem 0;}
+        @media (max-width:768px){.nav-links{display:none;}.hero-content h1{font-size:2.5rem;}.about-content{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.stats{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body>
+<header>
+    <nav class="container">
+        <div class="logo">יאיר - דפי נחיתה ופיתוח</div>
+        <ul class="nav-links">
+            <li><a onclick="scrollToSection('hero')">בית</a></li>
+            <li><a onclick="scrollToSection('services')">שירותים</a></li>
+            <li><a onclick="scrollToSection('portfolio')">דוגמאות עבודות</a></li>
+            <li><a onclick="scrollToSection('about')">קצת עליי</a></li>
+            <li><a onclick="scrollToSection('contact')">צור קשר</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>דפי נחיתה ופתרונות תוכנה שמייצרים תוצאות</h1>
+                <p>אני יאיר, מומחה לדפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. מביא לעסק שלך בדיוק את מה שהוא צריך - לקוחות ופתרונות טכנולוגיים מתקדמים.</p>
+                <button class="cta-button" onclick="scrollToSection('contact')">
+                    <i class="fas fa-rocket"></i> רוצה אתר או אפליקציה שעובדים עבורך 24/7?
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">מה אני מביא לשולחן?</h2>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-bullseye"></i></div><h3>דפי נחיתה ממירים</h3><p>דפים שבנויים בדיוק כדי להמיר גולשים ללקוחות. כל אלמנט מתוכנן לתוצאה מקסימלית.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-cogs"></i></div><h3>אפליקציות ומערכות</h3><p>פיתוח אפליקציות Full-Stack מתקדמות - ממערכות ניהול פרויקטים ועד CRM מותאמים.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>אוטומציה ויעילות</h3><p>פתרונות אוטומציה חכמים שחוסכים זמן ומשפרים תהליכים עסקיים.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><h3>עיצוב רספונסיבי</h3><p>כל מוצר שאני בונה נראה ועובד מושלם על כל מכשיר - מחשב, טאבלט או סמארטפון.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-users"></i></div><h3>ניסיון עם מותגים גדולים</h3><p>עבדתי עם מותגים מובילים וחברות בכל הגדלים. אני יודע מה עובד.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>יחס אישי ותמיכה מלאה</h3><p>אתה לא עוד לקוח. אתה שותף להצלחה. אני כאן עד שתראה תוצאות.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-teaser">
+        <div class="container">
+            <h2 class="section-title">פרויקטים שכבר השגתי</h2>
+            <p>כמה דוגמאות מהפרויקטים שיצרתי עבור לקוחות</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-preview"><h4>TaskFlow - מערכת ניהול פרויקטים</h4><p>אפליקציית Full-Stack עם React ו-Node.js...</p><div class="project-stats"><span><i class="fas fa-chart-line"></i> שיפור פרודוקטיביות ב-40%</span></div><a href="https://taskflow-orzz.onrender.com" target="_blank" class="demo-link"><i class="fas fa-external-link-alt"></i> צפה בדמו חי</a></div>
+                <!-- שאר הפרויקטים כאן -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>קצת עליי</h2>
+                    <p>שמי יאיר ואני מתמחה...</p>
+                </div>
+                <div class="stats">
+                    <div class="stat"><div class="stat-number">60+</div><div class="stat-label">פרויקטים מוצלחים</div></div>
+                    <div class="stat"><div class="stat-number">300%</div><div class="stat-label">עלייה ממוצעת בהמרות</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">מוכן להתחיל?</h2>
+            <p>בואו נדבר על איך דף נחיתה או אפליקציה יכולים לשנות את העסק שלך</p>
+
+            <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST">
+                <div class="form-group">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="השם שלך" required>
+                        <input type="email" name="email" placeholder="אימייל" required>
+                    </div>
+                    <input type="tel" name="phone" placeholder="טלפון">
+                    <textarea name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required></textarea>
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="submit-button"><i class="fas fa-paper-plane"></i> שלח הודעה</button>
+                </div>
+            </form>
+
+            <div style="margin-top: 2rem;">
+                <p>או התקשר ישירות: <strong>052-209-1733</strong></p>
+                <p>אימייל: <strong>przyyryair@gmail.com</strong></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 יאיר - דפי נחיתה ופתרונות תוכנה. כל הזכויות שמורות.</p>
+        <p>מותר לשתף, אסור להעתיק 😉</p>
+    </div>
+</footer>
+
+<script>
+    function scrollToSection(sectionId){
+        const element=document.getElementById(sectionId);
+        const headerOffset=80;
+        const elementPosition=element.offsetTop;
+        const offsetPosition=elementPosition-headerOffset;
+        window.scrollTo({top:offsetPosition,behavior:"smooth"});
+    }
+    window.addEventListener('scroll',function(){
+        const header=document.querySelector('header');
+        if(window.scrollY>100){header.style.background='rgba(0,0,0,0.9)';}
+        else{header.style.background='rgba(255,255,255,0.1)';}
+    });
+</script>
+</body>
+</html>
