@@ -16,6 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            /* גרדיאנט רקע */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
@@ -266,6 +267,66 @@
             transform: translateY(-2px);
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .client-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .client-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-company {
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
         /* About Section */
         .about {
             padding: 5rem 0;
@@ -293,7 +354,7 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             margin-top: 2rem;
         }
@@ -403,6 +464,64 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* --- סגנונות חדשים למנגנון הניהול והנעילה --- */
+        #admin-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            display: none; /* מתחיל מוסתר */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 99999;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #lock-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #764ba2; /* צבע תואם לגרדיאנט */
+            color: white;
+            display: none; /* מתחיל מוסתר */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 100000; /* הכי גבוה */
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        #lock-screen p {
+            margin-bottom: 20px;
+        }
+
+        .admin-button {
+            background: #FFD700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+            transition: all 0.3s;
+            margin: 10px;
+            font-size: 1rem;
+        }
+        .admin-button:hover {
+            background: #FFA500;
+            transform: translateY(-2px);
+        }
+        
     </style>
 </head>
 <body>
@@ -413,14 +532,15 @@
                 <li><a onclick="scrollToSection('hero')">בית</a></li>
                 <li><a onclick="scrollToSection('services')">שירותים</a></li>
                 <li><a onclick="scrollToSection('portfolio')">דוגמאות עבודות</a></li>
+                <li><a onclick="scrollToSection('testimonials')">המלצות</a></li>
                 <li><a onclick="scrollToSection('about')">קצת עליי</a></li>
                 <li><a onclick="scrollToSection('contact')">צור קשר</a></li>
+                <li><a onclick="showAdminPrompt()">ניהול אתר</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -434,7 +554,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="services">
             <div class="container">
                 <h2 class="section-title">מה אני מביא לשולחן?</h2>
@@ -490,7 +609,6 @@
             </div>
         </section>
 
-        <!-- Portfolio Teaser -->
         <section id="portfolio" class="portfolio-teaser">
             <div class="container">
                 <h2 class="section-title">פרויקטים שכבר השגתי</h2>
@@ -530,7 +648,6 @@
                         </a>
                     </div>
 
-                    <!-- פרויקט חדש: מרפאת שיניים -->
                     <div class="portfolio-preview">
                         <h4>מרפאת שיניים "חיוך מושלם"</h4>
                         <p>אתר מותאם SEO עם מערכת תורים אונליין, גלריית טיפולים לפני/אחרי, וביקורות מטופלים.</p>
@@ -542,7 +659,6 @@
                         </a>
                     </div>
                     
-                    <!-- פרויקט חדש: מוצר SaaS -->
                     <div class="portfolio-preview">
                         <h4>TimeMaster - ניהול פרויקטים</h4>
                         <p>ניהול פרויקטים מעולם אחר. פשוט. חכם. יעיל.</p>
@@ -554,11 +670,60 @@
                             <i class="fas fa-external-link-alt"></i> נסה גרסת דמו
                         </a>
                     </div>
+
+                    <div class="portfolio-preview">
+                        <h4>הקוסם חיים משמיים</h4>
+                        <p>אתר ייחודי לקוסם עם עיצוב קסום, אנימציות מרהיבות וחוויית משתמש מדהימה.</p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-chart-line"></i> עלייה של 200% בפניות</span>
+                            <span><i class="fas fa-star"></i> חוויית משתמש יוצאת דופן</span>
+                        </div>
+                        <a href="https://haim-4.onrender.com/haim-hamayim.html" target="_blank" rel="noopener noreferrer" class="demo-link">
+                            <i class="fas fa-external-link-alt"></i> גלה את הקסם
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- סקציית המלצות חדשה -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">מה הלקוחות אומרים?</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">ההצלחה של הלקוחות שלי היא ההצלחה שלי</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="client-avatar">ש</div>
+                        <p class="testimonial-text">"יאיר בנה לנו דף נחיתה שהכפיל את מספר הלקוחות שלנו תוך חודש. המקצועיות והיצירתיות שלו פשוט מדהימים!"</p>
+                        <div class="client-name">שירה כהן</div>
+                        <div class="client-company">מנכ"לית, CleanPro</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="client-avatar">מ</div>
+                        <p class="testimonial-text">"המערכת שיאיר פיתח לנו שינתה את כל דרך העבודה. ממשיכים לעבוד איתו על פרויקטים נוספים!"</p>
+                        <div class="client-name">מיכאל לוי</div>
+                        <div class="client-company">מייסד, TaskFlow</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="client-avatar">ר</div>
+                        <p class="testimonial-text">"יחס אישי, מקצועיות ברמה גבוהה ותוצאות מעל ומעבר לציפיות. ממליץ בחום!"</p>
+                        <div class="client-name">רועי פרץ</div>
+                        <div class="client-company">בעלים, PhotoMaster</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="client-avatar">ח</div>
+                        <p class="testimonial-text">"האתר שיאיר יצר עבורי כקוסם פשוט מדהים! האנימציות והעיצוב הקסום משאירים כל לקוח בהלם."</p>
+                        <div class="client-name">חיים משמיים</div>
+                        <div class="client-company">קוסם מקצועי</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="about">
             <div class="container">
                 <div class="about-content">
@@ -593,7 +758,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
                 <h2 class="section-title">מוכן להתחיל?</h2>
@@ -628,8 +792,30 @@
             <p>מותר לשתף, אסור להעתיק 😉</p>
         </div>
     </footer>
+    
+    <div id="admin-overlay">
+        <h2>פאנל ניהול (סימולציה)</h2>
+        <p style="margin: 20px 0;">שים לב: זהו פאנל ניהול בסיסי בצד הלקוח (דפדפן) ו**אינו מאובטח**. לניהול אתר מקצועי מלא, נדרשת מערכת צד שרת.</p>
+        <button class="admin-button" onclick="lockSite()">
+            <i class="fas fa-lock"></i>
+            נעל את האתר (Lock)
+        </button>
+        <button class="admin-button" onclick="document.getElementById('admin-overlay').style.display = 'none';">
+            <i class="fas fa-times"></i>
+            סגור פאנל
+        </button>
+    </div>
+
+    <div id="lock-screen">
+        <p>האתר **נעול זמנית** לצורך תחזוקה. אנא נסה שוב מאוחר יותר.</p>
+        <button class="admin-button" onclick="unlockSite()">
+            <i class="fas fa-unlock"></i>
+            פתח את האתר
+        </button>
+    </div>
 
     <script>
+        // --- פונקציות גלילה קיימות ---
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             const headerOffset = 80;
@@ -642,7 +828,7 @@
             });
         }
 
-        // Add scroll effect to header
+        // אפקט מעבר רקע ל-Header בגלילה
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -651,6 +837,41 @@
                 header.style.background = 'rgba(255, 255, 255, 0.1)';
             }
         });
+        
+        // --- פונקציות ניהול חדשות ---
+        
+        const ADMIN_PASSWORD = "1234"; 
+
+        function showAdminPrompt() {
+            // קבלת הסיסמה מהמשתמש
+            const password = prompt("הכנס סיסמת ניהול:");
+            
+            if (password === ADMIN_PASSWORD) {
+                // הצגת פאנל הניהול אם הסיסמה נכונה
+                document.getElementById('admin-overlay').style.display = 'flex';
+            } else if (password !== null) {
+                // הודעה על סיסמה שגויה
+                alert("סיסמה שגויה. נסה שוב.");
+            }
+        }
+
+        function lockSite() {
+            // הסתרת פאנל הניהול והצגת מסך הנעילה
+            document.getElementById('admin-overlay').style.display = 'none';
+            document.getElementById('lock-screen').style.display = 'flex';
+            
+            // מונע גלילה בגוף האתר כשהוא נעול
+            document.body.style.overflow = 'hidden';
+            
+            alert("האתר ננעל בהצלחה (לרענון הדף).");
+        }
+
+        function unlockSite() {
+            // הסתרת מסך הנעילה והחזרת הגלילה
+            document.getElementById('lock-screen').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            alert("האתר נפתח.");
+        }
     </script>
 </body>
 </html>
