@@ -45,7 +45,24 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
             color: white;
@@ -377,6 +394,96 @@
             font-size: 0.9rem;
         }
 
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.popular {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: right;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .pricing-features li i {
+            color: #4CAF50;
+            margin-left: 0.5rem;
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 0;
@@ -434,6 +541,55 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            background: #25D366;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -448,12 +604,37 @@
                 display: none;
             }
 
+            .logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1.4rem;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.popular {
+                transform: none;
+            }
+
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
             }
 
             .form-row {
@@ -463,19 +644,37 @@
             .stats {
                 grid-template-columns: 1fr;
             }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                left: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- כפתור וואצאפ צף -->
+    <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-text">צור קשר בוואצאפ</div>
+    </a>
+
     <header>
         <nav class="container">
-            <div class="logo">יאיר - דפי נחיתה ופיתוח</div>
+            <div class="logo-container">
+                <img src="logo.jpg" alt="יאיר - דפי נחיתה ופיתוח" class="logo-img">
+                <div class="logo-text">יאיר - דפי נחיתה ופיתוח</div>
+            </div>
             <ul class="nav-links">
                 <li><a onclick="scrollToSection('hero')">בית</a></li>
                 <li><a onclick="scrollToSection('services')">שירותים</a></li>
                 <li><a onclick="scrollToSection('portfolio')">דוגמאות עבודות</a></li>
                 <li><a onclick="scrollToSection('testimonials')">המלצות</a></li>
                 <li><a onclick="scrollToSection('about')">קצת עליי</a></li>
+                <li><a onclick="scrollToSection('pricing')">מחירים</a></li>
                 <li><a onclick="scrollToSection('contact')">צור קשר</a></li>
             </ul>
         </nav>
@@ -604,7 +803,7 @@
             </div>
         </section>
 
-        <!-- סקציית המלצות חדשה -->
+        <!-- סקציית המלצות -->
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <h2 class="section-title">מה הלקוחות אומרים?</h2>
@@ -700,6 +899,58 @@
                             <div class="stat-label">זמינות לתמיכה</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- סקציית מחירים חדשה -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section-title">מחירים שקופים</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">מחירים שמתחילים נמוך - תוצאות שמגיעות גבוה</p>
+                
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <h3>אתר בסיסי</h3>
+                        <div class="price">מ-400₪</div>
+                        <div class="price-note">מושלם לעסקים קטנים ומתחילים</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> עיצוב רספונסיבי ומודרני</li>
+                            <li><i class="fas fa-check"></i> דף נחיתה אחד</li>
+                            <li><i class="fas fa-check"></i> טופס יצירת קשר</li>
+                            <li><i class="fas fa-check"></i> התאמה למובייל</li>
+                            <li><i class="fas fa-check"></i> SEO בסיסי</li>
+                            <li><i class="fas fa-check"></i> תמיכה טכנית 7 ימים</li>
+                        </ul>
+                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20בסיסי" target="_blank" class="cta-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            הזמן עכשיו
+                        </a>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">הכי פופולרי</div>
+                        <h3>אתר מקצועי</h3>
+                        <div class="price">מ-600₪</div>
+                        <div class="price-note">אידיאלי לעסקים שצריכים נוכחות דיגיטלית חזקה</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> כל מה שבחבילה הבסיסית</li>
+                            <li><i class="fas fa-check"></i> דף נחיתה אחד</li>
+                            <li><i class="fas fa-check"></i> אנימציות מתקדמות</li>
+                            <li><i class="fas fa-check"></i> גלריית תמונות/פרויקטים</li>
+                            <li><i class="fas fa-check"></i> אינטגרציה עם מדיה חברתית</li>
+                            <li><i class="fas fa-check"></i> SEO מתקדם</li>
+                            <li><i class="fas fa-check"></i> תמיכה טכנית 30 יום</li>
+                        </ul>
+                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20מקצועי" target="_blank" class="cta-button">
+                            <i class="fas fa-star"></i>
+                            בחר בחבילה
+                        </a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; color: #666; font-size: 0.9rem;">
+                    <p>כל המחירים כוללים מע"מ. מחירים סופיים לפי דרישות הפרויקט.</p>
                 </div>
             </div>
         </section>
