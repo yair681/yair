@@ -49,29 +49,15 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            /* הוספתי כדי לוודא שהלוגו לא יזוז */
             flex-shrink: 0;
-            min-width: 0; /* מאפשר כיווץ מבוקר */
-        }
-
-        .logo-img {
-            height: 50px;
-            width: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            flex-shrink: 0; /* מונע מהתמונה להתכווץ */
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
         }
 
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: white;
-            white-space: nowrap; /* מונע ירידת שורה */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -642,25 +628,8 @@
                 display: block;
             }
 
-            .logo-container {
-                flex-direction: row;
-                gap: 0.8rem;
-                /* מוודא שהלוגו נשאר במקום */
-                position: static;
-                transform: none;
-                margin: 0;
-            }
-
-            .logo-img {
-                height: 40px;
-            }
-
             .logo-text {
-                font-size: 1.4rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 150px;
+                font-size: 1.2rem;
             }
 
             .hero-content h1 {
@@ -709,12 +678,7 @@
         /* תיקון נוסף למסכים קטנים מאוד */
         @media (max-width: 480px) {
             .logo-text {
-                font-size: 1.2rem;
-                max-width: 120px;
-            }
-            
-            .logo-img {
-                height: 35px;
+                font-size: 1rem;
             }
             
             .container {
@@ -741,7 +705,6 @@
     <header>
         <nav class="container">
             <div class="logo-container">
-                <img src="logo.jpg" alt="יאיר - דפי נחיתה ופיתוח" class="logo-img">
                 <div class="logo-text">יאיר - דפי נחיתה ופיתוח</div>
             </div>
             <ul class="nav-links">
