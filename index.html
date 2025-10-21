@@ -601,6 +601,22 @@
             padding: 2rem 0;
         }
 
+        .footer-links {
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
         /* רכיב נגישות */
         .accessibility-widget {
             position: fixed;
@@ -778,6 +794,59 @@
             display: block;
         }
 
+        /* סגנונות להצהרת נגישות */
+        .accessibility-statement {
+            background: white;
+            padding: 3rem 0;
+            direction: rtl;
+        }
+
+        .accessibility-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .accessibility-content h1 {
+            color: #333;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .accessibility-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+
+        .accessibility-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .accessibility-contact {
+            background: #e3f2fd;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         /* Mobile Responsive - תיקונים */
         @media (max-width: 768px) {
             .nav-links {
@@ -869,6 +938,10 @@
                 width: 90%;
                 max-width: none;
             }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* תיקון נוסף למסכים קטנים מאוד */
@@ -889,9 +962,30 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* סגנונות לסקיפ לינקים */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #667eea;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
     </style>
 </head>
 <body>
+    <!-- סקיפ לינקים לניווט מהיר -->
+    <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
     <!-- רכיב נגישות -->
     <div class="accessibility-widget" onclick="toggleAccessibilityPanel()" aria-label="פתח לוח נגישות" role="button" tabindex="0">
         <i class="fas fa-universal-access" aria-hidden="true"></i>
@@ -959,8 +1053,8 @@
     <div class="overlay" id="overlay" onclick="closeKeyboardGuide()"></div>
 
     <!-- כפתור וואצאפ צף -->
-    <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואצאפ">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <div class="whatsapp-text">צור קשר בוואצאפ</div>
     </a>
 
@@ -970,28 +1064,28 @@
                 <div class="logo-text">יאיר - דפי נחיתה ופיתוח</div>
             </div>
             <ul class="nav-links">
-                <li><a onclick="scrollToSection('hero')">בית</a></li>
-                <li><a onclick="scrollToSection('services')">שירותים</a></li>
-                <li><a onclick="scrollToSection('portfolio')">דוגמאות עבודות</a></li>
-                <li><a onclick="scrollToSection('testimonials')">המלצות</a></li>
-                <li><a onclick="scrollToSection('about')">קצת עליי</a></li>
-                <li><a onclick="scrollToSection('pricing')">מחירים</a></li>
-                <li><a onclick="scrollToSection('contact')">צור קשר</a></li>
+                <li><a onclick="scrollToSection('hero')" tabindex="0">בית</a></li>
+                <li><a onclick="scrollToSection('services')" tabindex="0">שירותים</a></li>
+                <li><a onclick="scrollToSection('portfolio')" tabindex="0">דוגמאות עבודות</a></li>
+                <li><a onclick="scrollToSection('testimonials')" tabindex="0">המלצות</a></li>
+                <li><a onclick="scrollToSection('about')" tabindex="0">קצת עליי</a></li>
+                <li><a onclick="scrollToSection('pricing')" tabindex="0">מחירים</a></li>
+                <li><a onclick="scrollToSection('contact')" tabindex="0">צור קשר</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="תפריט ניווט">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="hero" class="hero">
             <div class="container">
                 <div class="hero-content">
                     <h1>דפי נחיתה ופתרונות תוכנה שמייצרים תוצאות</h1>
                     <p>אני יאיר, מומחה לדפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. מביא לעסק שלך בדיוק את מה שהוא צריך - לקוחות ופתרונות טכנולוגיים מתקדמים.</p>
                     <button class="cta-button" onclick="scrollToSection('contact')">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
                         רוצה אתר או אפליקציה שעובדים עבורך 24/7?
                     </button>
                 </div>
@@ -1004,7 +1098,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-bullseye"></i>
+                            <i class="fas fa-bullseye" aria-hidden="true"></i>
                         </div>
                         <h3>דפי נחיתה ממירים</h3>
                         <p>דפים שבנויים בדיוק כדי להמיר גולשים ללקוחות. כל אלמנט מתוכנן לתוצאה מקסימלית.</p>
@@ -1012,7 +1106,7 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-cogs" aria-hidden="true"></i>
                         </div>
                         <h3>אפליקציות ומערכות</h3>
                         <p>פיתוח אפליקציות Full-Stack מתקדמות - ממערכות ניהול פרויקטים ועד CRM מותאמים.</p>
@@ -1020,7 +1114,7 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
                         </div>
                         <h3>אוטומציה ויעילות</h3>
                         <p>פתרונות אוטומציה חכמים שחוסכים זמן ומשפרים תהליכים עסקיים.</p>
@@ -1028,7 +1122,7 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                         </div>
                         <h3>עיצוב רספונסיבי</h3>
                         <p>כל מוצר שאני בונה נראה ועובד מושלם על כל מכשיר - מחשב, טאבלט או סמארטפון.</p>
@@ -1036,7 +1130,7 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
                         <h3>ניסיון עם מותגים גדולים</h3>
                         <p>עבדתי עם מותגים מובילים וחברות בכל הגדלים. אני יודע מה עובד.</p>
@@ -1044,7 +1138,7 @@
 
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-handshake"></i>
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
                         </div>
                         <h3>יחס אישי ותמיכה מלאה</h3>
                         <p>אתה לא עוד לקוח. אתה שותף להצלחה. אני כאן עד שתראה תוצאות.</p>
@@ -1063,10 +1157,10 @@
                         <h4>חידון קלקרים</h4>
                         <p>חידון אינטראקטיבי עם מערכת ניקוד מתקדמת, טיימר ואנימציות מרהיבות.</p>
                         <div class="project-stats">
-                            <span><i class="fas fa-chart-line"></i> עלייה של 300% במעורבות משתמשים</span>
+                            <span><i class="fas fa-chart-line" aria-hidden="true"></i> עלייה של 300% במעורבות משתמשים</span>
                         </div>
                         <a href="https://clicker-quiz-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link">
-                            <i class="fas fa-external-link-alt"></i> צפה בדמו חי
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> צפה בדמו חי
                         </a>
                     </div>
                     
@@ -1074,10 +1168,10 @@
                         <h4>מסעדה יוקרתית</h4>
                         <p>אתר מסעדה יוקרתי עם מערכת הזמנות מקוונת, תפריט דיגיטלי וגלריית תמונות.</p>
                         <div class="project-stats">
-                            <span><i class="fas fa-chart-line"></i> הכפלת הזמנות מקוונות בחודש הראשון</span>
+                            <span><i class="fas fa-chart-line" aria-hidden="true"></i> הכפלת הזמנות מקוונות בחודש הראשון</span>
                         </div>
                         <a href="https://luxury-restaurant-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link">
-                            <i class="fas fa-external-link-alt"></i> צפה באתר המסעדה
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> צפה באתר המסעדה
                         </a>
                     </div>
                     
@@ -1085,10 +1179,10 @@
                         <h4>מלון פרדיס</h4>
                         <p>אתר מלון עם מערכת הזמנות מתקדמת, גלריית חדרים ומערכת ניהול תורים.</p>
                         <div class="project-stats">
-                            <span><i class="fas fa-chart-line"></i> שיפור תפעולי דרמטי ומשוב לקוחות חיובי</span>
+                            <span><i class="fas fa-chart-line" aria-hidden="true"></i> שיפור תפעולי דרמטי ומשוב לקוחות חיובי</span>
                         </div>
                         <a href="https://hotel-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link">
-                            <i class="fas fa-external-link-alt"></i> צפה באתר המלון
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> צפה באתר המלון
                         </a>
                     </div>
 
@@ -1096,11 +1190,11 @@
                         <h4>הקוסם חיים משמיים</h4>
                         <p>אתר ייחודי לקוסם עם עיצוב קסום, אנימציות מרהיבות וחוויית משתמש מדהימה.</p>
                         <div class="project-stats">
-                            <span><i class="fas fa-chart-line"></i> עלייה של 200% בפניות</span>
-                            <span><i class="fas fa-star"></i> חוויית משתמש יוצאת דופן</span>
+                            <span><i class="fas fa-chart-line" aria-hidden="true"></i> עלייה של 200% בפניות</span>
+                            <span><i class="fas fa-star" aria-hidden="true"></i> חוויית משתמש יוצאת דופן</span>
                         </div>
                         <a href="https://haim-4.onrender.com/haim-hamayim.html" target="_blank" rel="noopener noreferrer" class="demo-link">
-                            <i class="fas fa-external-link-alt"></i> גלה את הקסם
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> גלה את הקסם
                         </a>
                     </div>
                 </div>
@@ -1219,16 +1313,16 @@
                         <div class="price">400₪</div>
                         <div class="price-note">אתר קצר וממוקד שממיר גולשים ללקוחות</div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> עיצוב רספונסיבי ומודרני</li>
-                            <li><i class="fas fa-check"></i> דף נחיתה אחד קצר ומרשים</li>
-                            <li><i class="fas fa-check"></i> טופס יצירת קשר</li>
-                            <li><i class="fas fa-check"></i> התאמה מושלמת למובייל</li>
-                            <li><i class="fas fa-check"></i> SEO בסיסי</li>
-                            <li><i class="fas fa-check"></i> תמיכה טכנית 7 ימים</li>
-                            <li><i class="fas fa-check"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> עיצוב רספונסיבי ומודרני</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> דף נחיתה אחד קצר ומרשים</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> טופס יצירת קשר</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> התאמה מושלמת למובייל</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> SEO בסיסי</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 7 ימים</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
                         </ul>
                         <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20דף%20נחיתה%20בסיסי" target="_blank" class="cta-button">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                             הזמן עכשיו
                         </a>
                     </div>
@@ -1238,17 +1332,17 @@
                         <div class="price">500₪</div>
                         <div class="price-note">הצגת מוצרים עם קישורים לרכישה חיצונית</div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> עיצוב חנות מקצועי</li>
-                            <li><i class="fas fa-check"></i> קטלוג מוצרים מסודר</li>
-                            <li><i class="fas fa-check"></i> קישורים לרכישה חיצונית</li>
-                            <li><i class="fas fa-check"></i> התאמה מלאה למובייל</li>
-                            <li><i class="fas fa-check"></i> אינטגרציה עם WhatsApp לעסקים</li>
-                            <li><i class="fas fa-check"></i> SEO מתקדם</li>
-                            <li><i class="fas fa-check"></i> תמיכה טכנית 14 יום</li>
-                            <li><i class="fas fa-check"></i> עזרה בהגדרת מערכת רכישה חיצונית</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> עיצוב חנות מקצועי</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> קטלוג מוצרים מסודר</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> קישורים לרכישה חיצונית</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> התאמה מלאה למובייל</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> אינטגרציה עם WhatsApp לעסקים</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> SEO מתקדם</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 14 יום</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> עזרה בהגדרת מערכת רכישה חיצונית</li>
                         </ul>
                         <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20חנות%20מקוונת" target="_blank" class="cta-button">
-                            <i class="fas fa-store"></i>
+                            <i class="fas fa-store" aria-hidden="true"></i>
                             בחר בחבילה
                         </a>
                     </div>
@@ -1259,17 +1353,17 @@
                         <div class="price">600₪</div>
                         <div class="price-note">אידיאלי לעסקים שצריכים נוכחות דיגיטלית חזקה</div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> כל מה שבחבילה הבסיסית</li>
-                            <li><i class="fas fa-check"></i> דף נחיתה אחד מרשים</li>
-                            <li><i class="fas fa-check"></i> אנימציות מתקדמות</li>
-                            <li><i class="fas fa-check"></i> גלריית תמונות/פרויקטים</li>
-                            <li><i class="fas fa-check"></i> אינטגרציה עם מדיה חברתית</li>
-                            <li><i class="fas fa-check"></i> SEO מתקדם</li>
-                            <li><i class="fas fa-check"></i> תמיכה טכנית 30 יום</li>
-                            <li><i class="fas fa-check"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> כל מה שבחבילה הבסיסית</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> דף נחיתה אחד מרשים</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> אנימציות מתקדמות</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> גלריית תמונות/פרויקטים</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> אינטגרציה עם מדיה חברתית</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> SEO מתקדם</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 30 יום</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
                         </ul>
                         <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20מקצועי" target="_blank" class="cta-button">
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                             בחר בחבילה
                         </a>
                     </div>
@@ -1279,18 +1373,18 @@
                         <div class="price">800₪</div>
                         <div class="price-note">מציג את כל העסק שלך בצורה מקצועית ומרשימה</div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> אתר רב-דפי מקצועי</li>
-                            <li><i class="fas fa-check"></i> עיצוב ייחודי לעסק שלך</li>
-                            <li><i class="fas fa-check"></i> דף אודות, שירותים, צור קשר</li>
-                            <li><i class="fas fa-check"></i> גלריית עבודות/מוצרים</li>
-                            <li><i class="fas fa-check"></i> אנימציות מתקדמות</li>
-                            <li><i class="fas fa-check"></i> SEO מתקדם</li>
-                            <li><i class="fas fa-check"></i> אינטגרציה עם מדיה חברתית</li>
-                            <li><i class="fas fa-check"></i> תמיכה טכנית 30 יום</li>
-                            <li><i class="fas fa-check"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> אתר רב-דפי מקצועי</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> עיצוב ייחודי לעסק שלך</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> דף אודות, שירותים, צור קשר</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> גלריית עבודות/מוצרים</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> אנימציות מתקדמות</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> SEO מתקדם</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> אינטגרציה עם מדיה חברתית</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 30 יום</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
                         </ul>
                         <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20תדמיתי" target="_blank" class="cta-button">
-                            <i class="fas fa-crown"></i>
+                            <i class="fas fa-crown" aria-hidden="true"></i>
                             בחר בחבילה
                         </a>
                     </div>
@@ -1311,13 +1405,13 @@
                 <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST">
                     <div class="form-group">
                         <div class="form-row">
-                            <input type="text" name="name" placeholder="השם שלך" required>
-                            <input type="email" name="email" placeholder="אימייל" required>
+                            <input type="text" name="name" placeholder="השם שלך" required aria-label="שם מלא">
+                            <input type="email" name="email" placeholder="אימייל" required aria-label="כתובת אימייל">
                         </div>
-                        <input type="tel" name="phone" placeholder="טלפון">
-                        <textarea name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required></textarea>
+                        <input type="tel" name="phone" placeholder="טלפון" aria-label="מספר טלפון">
+                        <textarea name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required aria-label="הודעה"></textarea>
                         <button type="submit" class="submit-button">
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             שלח הודעה
                         </button>
                     </div>
@@ -1329,10 +1423,83 @@
                 </div>
             </div>
         </section>
+
+        <!-- הצהרת נגישות -->
+        <section id="accessibility-statement" class="accessibility-statement">
+            <div class="accessibility-content">
+                <h1>הצהרת נגישות</h1>
+                
+                <div class="accessibility-section">
+                    <h2>רמת הנגישות</h2>
+                    <p>אתר זה עומד בדרישות תקן הנגישות הישראלי ת"י 5568, המבוסס על תקן WCAG 2.0 Level AA. האתר הונגש כדי לאפשר גישה נוחה יותר לאנשים עם מוגבלויות.</p>
+                </div>
+
+                <div class="accessibility-section">
+                    <h2>הסדרי הנגישות שבוצעו באתר</h2>
+                    <ul>
+                        <li>תמיכה מלאה בניווט באמצעות מקלדת</li>
+                        <li>סרגל נגישות מתקדם עם אפשרויות התאמה אישית</li>
+                        <li>ניגודיות צבעים מותאמת לעיוורי צבעים</li>
+                        <li>אפשרות להגדלת גופן הטקסט</li>
+                        <li>מבנה HTML סמנטי ותקין</li>
+                        <li>תגיות ARIA לשיפור הקריאה בקוראי מסך</li>
+                        <li>טקסט אלטרנטיבי לכל התמונות והאייקונים</li>
+                        <li>פוקוס ברור ונראה לעין בעת ניווט במקלדת</li>
+                        <li>קישורי דילוג לניווט מהיר</li>
+                    </ul>
+                </div>
+
+                <div class="accessibility-section">
+                    <h2>חריגים ופטורים</h2>
+                    <p>למרות מאמצינו להנגיש את כל חלקי האתר, יתכנו דפים או רכיבים שעדיין אינם נגישים במלואם:</p>
+                    <ul>
+                        <li>תוכן חיצוני מאתרים אחרים שאינו בשליטתנו</li>
+                        <li>סרטונים ישנים שעדיין לא תומללו</li>
+                        <li>מסמכים ישנים בפורמט PDF</li>
+                    </ul>
+                </div>
+
+                <div class="accessibility-section">
+                    <h2>איש קשר לנושאי נגישות</h2>
+                    <p>אם נתקלתם בבעיית נגישות כלשהי באתר, או אם אתם זקוקים לסיוע, אנא צרו איתנו קשר:</p>
+                    <div class="accessibility-contact">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>רכז נגישות:</strong><br>
+                                יאיר פרץ
+                            </div>
+                            <div class="contact-item">
+                                <strong>טלפון:</strong><br>
+                                052-209-1733
+                            </div>
+                            <div class="contact-item">
+                                <strong>אימייל:</strong><br>
+                                przyyryair@gmail.com
+                            </div>
+                            <div class="contact-item">
+                                <strong>שעות פעילות:</strong><br>
+                                א'-ה' 09:00-18:00
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem;">נשמח לשמוע מכם ולסייע בכל בעיית נגישות שתעלה.</p>
+                    </div>
+                </div>
+
+                <div class="accessibility-section">
+                    <h2>תאריך עדכון אחרון</h2>
+                    <p>הצהרת נגישות זו עודכנה לאחרונה ב-15 בדצמבר 2024.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
+            <div class="footer-links">
+                <a href="#accessibility-statement">הצהרת נגישות</a>
+                <a href="#contact">צור קשר</a>
+                <a href="#pricing">מחירים</a>
+            </div>
             <p>&copy; 2025 יאיר - דפי נחיתה ופתרונות תוכנה. כל הזכויות שמורות.</p>
             <p>מותר לשתף, אסור להעתיק 😉</p>
         </div>
