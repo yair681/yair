@@ -513,6 +513,18 @@
             gap: 1rem;
         }
 
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .form-field label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: white;
+        }
+
         input, textarea {
             padding: 15px;
             border: none;
@@ -542,6 +554,21 @@
         .submit-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .form-consent {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .form-consent a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .form-consent a:hover {
+            text-decoration: underline;
         }
 
         /* WhatsApp Floating Button */
@@ -1506,18 +1533,33 @@
                 <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST">
                     <div class="form-group">
                         <div class="form-row">
-                            <input type="text" name="name" placeholder="השם שלך" required aria-label="שם מלא">
-                            <input type="email" name="email" placeholder="אימייל" required aria-label="כתובת אימייל">
+                            <div class="form-field">
+                                <label for="name">שם מלא *</label>
+                                <input type="text" id="name" name="name" placeholder="השם שלך" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">אימייל *</label>
+                                <input type="email" id="email" name="email" placeholder="אימייל" required>
+                            </div>
                         </div>
-                        <input type="tel" name="phone" placeholder="טלפון" aria-label="מספר טלפון">
-                        <textarea name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required aria-label="הודעה"></textarea>
+                        <div class="form-field">
+                            <label for="phone">טלפון</label>
+                            <input type="tel" id="phone" name="phone" placeholder="טלפון">
+                        </div>
+                        <div class="form-field">
+                            <label for="message">הודעה *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required></textarea>
+                        </div>
                         <button type="submit" class="submit-button">
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             שלח הודעה
                         </button>
                     </div>
-                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">
-                        על ידי שליחת הטופס, אתה מאשר שקראת והסכמת ל<a href="#privacy-policy" style="color: #FFD700;">מדיניות הפרטיות</a> שלנו.
+                    <p class="form-consent">
+                        בלחיצה על 'שלח', אני מאשר את 
+                        <a href="#terms-of-use">תנאי השימוש</a> 
+                        ואת 
+                        <a href="#privacy-policy">מדיניות הפרטיות</a>.
                     </p>
                 </form>
 
