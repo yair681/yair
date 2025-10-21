@@ -16,8 +16,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            /* גרדיאנט רקע */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -601,6 +601,183 @@
             padding: 2rem 0;
         }
 
+        /* רכיב נגישות */
+        .accessibility-widget {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            z-index: 1001;
+            background: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accessibility-widget:hover {
+            transform: scale(1.1);
+        }
+
+        .accessibility-panel {
+            position: fixed;
+            bottom: 150px;
+            left: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            z-index: 1002;
+            width: 250px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .accessibility-panel.active {
+            display: block;
+        }
+
+        .accessibility-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .accessibility-option:hover {
+            background: #f5f5f5;
+        }
+
+        .accessibility-option i {
+            margin-left: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .accessibility-option.active {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+        }
+
+        /* מצבי נגישות */
+        body.high-contrast {
+            background: #000 !important;
+            color: #fff !important;
+            filter: contrast(2) !important;
+        }
+
+        body.high-contrast * {
+            background: #000 !important;
+            color: #fff !important;
+            border-color: #fff !important;
+        }
+
+        body.high-contrast .service-card,
+        body.high-contrast .testimonial-card,
+        body.high-contrast .pricing-card {
+            background: #000 !important;
+            border: 2px solid #fff !important;
+        }
+
+        body.grayscale {
+            filter: grayscale(1) !important;
+        }
+
+        body.large-text {
+            font-size: 1.2em !important;
+        }
+
+        body.large-text h1, 
+        body.large-text h2, 
+        body.large-text h3 {
+            font-size: 1.3em !important;
+        }
+
+        body.focus-highlight *:focus {
+            outline: 3px solid #FFD700 !important;
+            outline-offset: 2px !important;
+        }
+
+        /* סמן גדול */
+        body.large-cursor {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23000' opacity='0.5'/%3E%3C/svg%3E") 16 16, auto !important;
+        }
+
+        body.large-cursor * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23000' opacity='0.5'/%3E%3C/svg%3E") 16 16, auto !important;
+        }
+
+        /* אנימציות */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* מדריך מקלדת */
+        .keyboard-guide {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            max-width: 500px;
+            display: none;
+        }
+
+        .keyboard-guide.active {
+            display: block;
+        }
+
+        .keyboard-guide h3 {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .keyboard-shortcut {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .close-guide {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* שכבת overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
         /* Mobile Responsive - תיקונים */
         @media (max-width: 768px) {
             .nav-links {
@@ -673,6 +850,25 @@
                 position: relative;
                 min-height: 60px;
             }
+            
+            /* התאמות נגישות למובייל */
+            .accessibility-widget {
+                bottom: 80px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .accessibility-panel {
+                bottom: 135px;
+                left: 15px;
+                width: 220px;
+            }
+            
+            .keyboard-guide {
+                width: 90%;
+                max-width: none;
+            }
         }
 
         /* תיקון נוסף למסכים קטנים מאוד */
@@ -696,6 +892,72 @@
     </style>
 </head>
 <body>
+    <!-- רכיב נגישות -->
+    <div class="accessibility-widget" onclick="toggleAccessibilityPanel()" aria-label="פתח לוח נגישות" role="button" tabindex="0">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+    </div>
+
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="accessibility-option" onclick="toggleHighContrast()" id="highContrastOption">
+            <i class="fas fa-adjust"></i>
+            <span>ניגודיות גבוהה</span>
+        </div>
+        <div class="accessibility-option" onclick="toggleGrayscale()" id="grayscaleOption">
+            <i class="fas fa-palette"></i>
+            <span>גווני אפור</span>
+        </div>
+        <div class="accessibility-option" onclick="toggleLargeText()" id="largeTextOption">
+            <i class="fas fa-text-height"></i>
+            <span>גדל טקסט</span>
+        </div>
+        <div class="accessibility-option" onclick="toggleFocusHighlight()" id="focusHighlightOption">
+            <i class="fas fa-mouse-pointer"></i>
+            <span>הדגשת פוקוס</span>
+        </div>
+        <div class="accessibility-option" onclick="toggleLargeCursor()" id="largeCursorOption">
+            <i class="fas fa-expand-arrows-alt"></i>
+            <span>סמן גדול</span>
+        </div>
+        <div class="accessibility-option" onclick="showKeyboardGuide()">
+            <i class="fas fa-keyboard"></i>
+            <span>מדריך מקלדת</span>
+        </div>
+        <div class="accessibility-option" onclick="resetAccessibility()">
+            <i class="fas fa-undo"></i>
+            <span>אפס הגדרות</span>
+        </div>
+    </div>
+
+    <!-- מדריך מקלדת -->
+    <div class="keyboard-guide" id="keyboardGuide">
+        <button class="close-guide" onclick="closeKeyboardGuide()" aria-label="סגור מדריך מקלדת">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3>קיצורי מקלדת</h3>
+        <div class="keyboard-shortcut">
+            <span>Tab</span>
+            <span>ניווט בין אלמנטים</span>
+        </div>
+        <div class="keyboard-shortcut">
+            <span>Shift + Tab</span>
+            <span>ניווט אחורה</span>
+        </div>
+        <div class="keyboard-shortcut">
+            <span>Enter / Space</span>
+            <span>הפעלת כפתור</span>
+        </div>
+        <div class="keyboard-shortcut">
+            <span>Esc</span>
+            <span>יציאה/ביטול</span>
+        </div>
+        <div class="keyboard-shortcut">
+            <span>Alt + A</span>
+            <span>פתיחת לוח נגישות</span>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeKeyboardGuide()"></div>
+
     <!-- כפתור וואצאפ צף -->
     <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
@@ -1077,6 +1339,141 @@
     </footer>
 
     <script>
+        // --- פונקציות נגישות ---
+        
+        // פונקציה לפתיחת/סגירת לוח הנגישות
+        function toggleAccessibilityPanel() {
+            const panel = document.getElementById('accessibilityPanel');
+            panel.classList.toggle('active');
+        }
+
+        // פונקציה לניגודיות גבוהה
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            document.getElementById('highContrastOption').classList.toggle('active');
+            savePreference('highContrast', document.body.classList.contains('high-contrast'));
+        }
+
+        // פונקציה לגווני אפור
+        function toggleGrayscale() {
+            document.body.classList.toggle('grayscale');
+            document.getElementById('grayscaleOption').classList.toggle('active');
+            savePreference('grayscale', document.body.classList.contains('grayscale'));
+        }
+
+        // פונקציה לטקסט גדול
+        function toggleLargeText() {
+            document.body.classList.toggle('large-text');
+            document.getElementById('largeTextOption').classList.toggle('active');
+            savePreference('largeText', document.body.classList.contains('large-text'));
+        }
+
+        // פונקציה להדגשת פוקוס
+        function toggleFocusHighlight() {
+            document.body.classList.toggle('focus-highlight');
+            document.getElementById('focusHighlightOption').classList.toggle('active');
+            savePreference('focusHighlight', document.body.classList.contains('focus-highlight'));
+        }
+
+        // פונקציה לסמן גדול
+        function toggleLargeCursor() {
+            document.body.classList.toggle('large-cursor');
+            document.getElementById('largeCursorOption').classList.toggle('active');
+            savePreference('largeCursor', document.body.classList.contains('large-cursor'));
+        }
+
+        // פונקציה להצגת מדריך מקלדת
+        function showKeyboardGuide() {
+            document.getElementById('keyboardGuide').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+            toggleAccessibilityPanel(); // סגירת לוח נגישות
+        }
+
+        // פונקציה לסגירת מדריך מקלדת
+        function closeKeyboardGuide() {
+            document.getElementById('keyboardGuide').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        // פונקציה לאיפוס הגדרות נגישות
+        function resetAccessibility() {
+            document.body.classList.remove('high-contrast', 'grayscale', 'large-text', 'focus-highlight', 'large-cursor');
+            
+            // איפוס כל האפשרויות הפעילות
+            document.querySelectorAll('.accessibility-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            localStorage.removeItem('accessibilitySettings');
+            toggleAccessibilityPanel(); // סגירת הלוח לאחר האיפוס
+        }
+
+        // פונקציה לשמירת העדפות נגישות
+        function savePreference(key, value) {
+            let settings = JSON.parse(localStorage.getItem('accessibilitySettings')) || {};
+            settings[key] = value;
+            localStorage.setItem('accessibilitySettings', JSON.stringify(settings));
+        }
+
+        // פונקציה לטעינת העדפות נגישות
+        function loadPreferences() {
+            const settings = JSON.parse(localStorage.getItem('accessibilitySettings'));
+            if (settings) {
+                if (settings.highContrast) {
+                    document.body.classList.add('high-contrast');
+                    document.getElementById('highContrastOption').classList.add('active');
+                }
+                if (settings.grayscale) {
+                    document.body.classList.add('grayscale');
+                    document.getElementById('grayscaleOption').classList.add('active');
+                }
+                if (settings.largeText) {
+                    document.body.classList.add('large-text');
+                    document.getElementById('largeTextOption').classList.add('active');
+                }
+                if (settings.focusHighlight) {
+                    document.body.classList.add('focus-highlight');
+                    document.getElementById('focusHighlightOption').classList.add('active');
+                }
+                if (settings.largeCursor) {
+                    document.body.classList.add('large-cursor');
+                    document.getElementById('largeCursorOption').classList.add('active');
+                }
+            }
+        }
+
+        // קיצורי מקלדת
+        document.addEventListener('keydown', function(e) {
+            // Alt + A - פתיחת לוח נגישות
+            if (e.altKey && e.key === 'a') {
+                e.preventDefault();
+                toggleAccessibilityPanel();
+            }
+            
+            // Esc - סגירת לוחות פתוחים
+            if (e.key === 'Escape') {
+                document.getElementById('accessibilityPanel').classList.remove('active');
+                closeKeyboardGuide();
+            }
+        });
+
+        // טעינת העדפות נגישות בעת טעינת הדף
+        window.addEventListener('DOMContentLoaded', function() {
+            loadPreferences();
+            
+            // הוספת תמיכה ב-ARIA
+            document.querySelectorAll('button, a').forEach(el => {
+                if (!el.hasAttribute('aria-label') && !el.textContent.trim()) {
+                    el.setAttribute('aria-label', el.getAttribute('title') || 'לחץ לפעולה');
+                }
+            });
+            
+            // הוספת תמיכה ב-tabindex לאלמנטים אינטראקטיביים
+            document.querySelectorAll('.service-card, .portfolio-preview, .testimonial-card, .pricing-card').forEach(el => {
+                el.setAttribute('tabindex', '0');
+            });
+        });
+
         // --- פונקציות גלילה קיימות ---
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
