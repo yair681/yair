@@ -655,7 +655,7 @@
             outline: none;
         }
 
-        /* רכיב נגישות */
+        /* Accessibility Widget */
         .accessibility-widget {
             position: fixed;
             bottom: 90px;
@@ -724,7 +724,7 @@
             border: 1px solid #2196f3;
         }
 
-        /* מצבי נגישות */
+        /* Accessibility Modes */
         body.high-contrast {
             background: #000 !important;
             color: #fff !important;
@@ -763,7 +763,6 @@
             outline-offset: 2px !important;
         }
 
-        /* סמן גדול */
         body.large-cursor {
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23000' opacity='0.5'/%3E%3C/svg%3E") 16 16, auto !important;
         }
@@ -772,13 +771,13 @@
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23000' opacity='0.5'/%3E%3C/svg%3E") 16 16, auto !important;
         }
 
-        /* אנימציות */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* מדריך מקלדת */
+        /* Keyboard Guide */
         .keyboard-guide {
             position: fixed;
             top: 50%;
@@ -828,7 +827,7 @@
             outline: 1px solid #667eea;
         }
 
-        /* שכבת overlay */
+        /* Overlay */
         .overlay {
             position: fixed;
             top: 0;
@@ -844,7 +843,7 @@
             display: block;
         }
 
-        /* סגנונות להצהרת נגישות */
+        /* Accessibility Statement */
         .accessibility-statement {
             background: white;
             padding: 3rem 0;
@@ -897,7 +896,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* סגנונות לנגישות נוספת */
+        /* Additional Accessibility Styles */
         .visually-hidden {
             position: absolute;
             width: 1px;
@@ -910,13 +909,12 @@
             border: 0;
         }
 
-        /* פוקוס גלובלי */
         *:focus {
             outline: 2px solid #007acc;
             outline-offset: 2px;
         }
 
-        /* Mobile Responsive - תיקונים */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -984,13 +982,6 @@
                 left: 15px;
             }
 
-            /* מוודא שהלוגו לא יזוז גם במובייל */
-            nav {
-                position: relative;
-                min-height: 60px;
-            }
-            
-            /* התאמות נגישות למובייל */
             .accessibility-widget {
                 bottom: 80px;
                 left: 15px;
@@ -1014,7 +1005,6 @@
             }
         }
 
-        /* תיקון נוסף למסכים קטנים מאוד */
         @media (max-width: 480px) {
             .logo-text {
                 font-size: 1rem;
@@ -1033,7 +1023,6 @@
             }
         }
 
-        /* סגנונות לסקיפ לינקים */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -1054,10 +1043,8 @@
     </style>
 </head>
 <body>
-    <!-- סקיפ לינקים לניווט מהיר -->
     <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
 
-    <!-- רכיב נגישות -->
     <div class="accessibility-widget" onclick="toggleAccessibilityPanel()" aria-label="פתח לוח נגישות" role="button" tabindex="0">
         <i class="fas fa-universal-access" aria-hidden="true"></i>
     </div>
@@ -1093,7 +1080,6 @@
         </div>
     </div>
 
-    <!-- מדריך מקלדת -->
     <div class="keyboard-guide" id="keyboardGuide" role="dialog" aria-labelledby="keyboardGuideTitle" aria-modal="true">
         <button class="close-guide" onclick="closeKeyboardGuide()" aria-label="סגור מדריך מקלדת">
             <i class="fas fa-times" aria-hidden="true"></i>
@@ -1119,7 +1105,6 @@
 
     <div class="overlay" id="overlay" onclick="closeKeyboardGuide()"></div>
 
-    <!-- כפתור וואצאפ צף -->
     <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואצאפ" rel="noopener noreferrer">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <div class="whatsapp-text">צור קשר בוואצאפ</div>
@@ -1130,7 +1115,7 @@
             <div class="logo-container">
                 <div class="logo-text">יאיר - דפי נחיתה ופיתוח</div>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a onclick="scrollToSection('hero')" tabindex="0">בית</a></li>
                 <li><a onclick="scrollToSection('services')" tabindex="0">שירותים</a></li>
                 <li><a onclick="scrollToSection('portfolio')" tabindex="0">דוגמאות עבודות</a></li>
@@ -1163,7 +1148,7 @@
             <div class="container">
                 <h2 class="section-title">מה אני מביא לשולחן?</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0">
                         <div class="service-icon">
                             <i class="fas fa-bullseye" aria-hidden="true"></i>
                         </div>
@@ -1171,7 +1156,7 @@
                         <p>דפים שבנויים בדיוק כדי להמיר גולשים ללקוחות. כל אלמנט מתוכנן לתוצאה מקסימלית.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0">
                         <div class="service-icon">
                             <i class="fas fa-cogs" aria-hidden="true"></i>
                         </div>
@@ -1179,7 +1164,7 @@
                         <p>פיתוח אפליקציות Full-Stack מתקדמות - ממערכות ניהול פרויקטים ועד CRM מותאמים.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0">
                         <div class="service-icon">
                             <i class="fas fa-chart-line" aria-hidden="true"></i>
                         </div>
@@ -1187,7 +1172,7 @@
                         <p>פתרונות אוטומציה חכמים שחוסכים זמן ומשפרים תהליכים עסקיים.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                         </div>
@@ -1195,7 +1180,7 @@
                         <p>כל מוצר שאני בונה נראה ועובד מושלם על כל מכשיר - מחשב, טאבלט או סמארטפון.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0">
                         <div class="service-icon">
                             <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
@@ -1203,7 +1188,7 @@
                         <p>עבדתי עם מותגים מובילים וחברות בכל הגדלים. אני יודע מה עובד.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0">
                         <div class="service-icon">
                             <i class="fas fa-handshake" aria-hidden="true"></i>
                         </div>
@@ -1220,7 +1205,7 @@
                 <p>כמה דוגמאות מהפרויקטים שיצרתי עבור לקוחות</p>
                 
                 <div class="portfolio-grid">
-                    <div class="portfolio-preview">
+                    <div class="portfolio-preview" tabindex="0">
                         <h4>חידון קלקרים</h4>
                         <p>חידון אינטראקטיבי עם מערכת ניקוד מתקדמת, טיימר ואנימציות מרהיבות.</p>
                         <div class="project-stats">
@@ -1231,7 +1216,7 @@
                         </a>
                     </div>
                     
-                    <div class="portfolio-preview">
+                    <div class="portfolio-preview" tabindex="0">
                         <h4>מסעדה יוקרתית</h4>
                         <p>אתר מסעדה יוקרתי עם מערכת הזמנות מקוונת, תפריט דיגיטלי וגלריית תמונות.</p>
                         <div class="project-stats">
@@ -1242,7 +1227,7 @@
                         </a>
                     </div>
                     
-                    <div class="portfolio-preview">
+                    <div class="portfolio-preview" tabindex="0">
                         <h4>מלון פרדיס</h4>
                         <p>אתר מלון עם מערכת הזמנות מתקדמת, גלריית חדרים ומערכת ניהול תורים.</p>
                         <div class="project-stats">
@@ -1253,7 +1238,7 @@
                         </a>
                     </div>
 
-                    <div class="portfolio-preview">
+                    <div class="portfolio-preview" tabindex="0">
                         <h4>הקוסם חיים משמיים</h4>
                         <p>אתר ייחודי לקוסם עם עיצוב קסום, אנימציות מרהיבות וחוויית משתמש מדהימה.</p>
                         <div class="project-stats">
@@ -1268,63 +1253,62 @@
             </div>
         </section>
 
-        <!-- סקציית המלצות -->
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <h2 class="section-title">מה הלקוחות אומרים?</h2>
                 <p style="text-align: center; color: #666; margin-bottom: 2rem;">ההצלחה של הלקוחות שלי היא ההצלחה שלי</p>
                 
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">ש</div>
                         <p class="testimonial-text">"יאיר בנה לנו דף נחיתה שהכפיל את מספר הלקוחות שלנו תוך חודש. המקצועיות והיצירתיות שלו פשוט מדהימים!"</p>
                         <div class="client-name">שירה כהן</div>
                         <div class="client-company">מנכ"לית, CleanPro</div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">מ</div>
                         <p class="testimonial-text">"המערכת שיאיר פיתח לנו שינתה את כל דרך העבודה. ממשיכים לעבוד איתו על פרויקטים נוספים!"</p>
                         <div class="client-name">מיכאל לוי</div>
                         <div class="client-company">מייסד, TaskFlow</div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">ר</div>
                         <p class="testimonial-text">"יחס אישי, מקצועיות ברמה גבוהה ותוצאות מעל ומעבר לציפיות. ממליץ בחום!"</p>
                         <div class="client-name">רועי פרץ</div>
                         <div class="client-company">בעלים, PhotoMaster</div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">ח</div>
                         <p class="testimonial-text">"האתר שיאיר יצר עבורי כקוסם פשוט מדהים! האנימציות והעיצוב הקסום משאירים כל לקוח בהלם."</p>
                         <div class="client-name">חיים משמיים</div>
                         <div class="client-company">קוסם מקצועי</div>
                     </div>
 
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">א</div>
                         <p class="testimonial-text">"החידון האינטראקטיבי שיאיר פיתח לנו הגדיל את מעורבות המשתמשים ב-300%. התוצאות מדברות בעד עצמן!"</p>
                         <div class="client-name">אביב גולן</div>
                         <div class="client-company">מנהל מוצר, QuizMaster</div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">נ</div>
                         <p class="testimonial-text">"אתר המסעדה שיאיר יצר לנו הכפיל את מספר ההזמנות המקוונות. הממשק אינטואיטיבי והעיצוב מרשים."</p>
                         <div class="client-name">נועה לוי</div>
                         <div class="client-company">בעלים, מסעדת 'טעם העיר'</div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">ד</div>
                         <p class="testimonial-text">"מערכת ההזמנות למלון שיאיר פיתח שיפרה את התפעול שלנו באופן דרמטי. הלקוחות מרוצים ואנחנו מרוצים!"</p>
                         <div class="client-name">דניאל כהן</div>
                         <div class="client-company">מנהל, מלון 'ריביירה'</div>
                     </div>
 
-                    <div class="testimonial-card">
+                    <div class="testimonial-card" tabindex="0">
                         <div class="client-avatar" aria-hidden="true">י</div>
                         <p class="testimonial-text">"האפליקציה לעסק שיאיר פיתח הפכה לכלי העבודה המרכזי שלנו. אינטואיטיבית, מהירה ומדויקת."</p>
                         <div class="client-name">יעקב מזרחי</div>
@@ -1368,14 +1352,13 @@
             </div>
         </section>
 
-        <!-- סקציית מחירים מעודכנת עם 4 חבילות -->
         <section id="pricing" class="pricing">
             <div class="container">
                 <h2 class="section-title">מחירים שקופים</h2>
                 <p style="text-align: center; color: #666; margin-bottom: 2rem;">מחירים שמתחילים נמוך - תוצאות שמגיעות גבוה</p>
                 
                 <div class="pricing-cards">
-                    <div class="pricing-card">
+                    <div class="pricing-card" tabindex="0">
                         <h3>דף נחיתה בסיסי</h3>
                         <div class="price">400₪</div>
                         <div class="price-note">אתר קצר וממוקד שממיר גולשים ללקוחות</div>
@@ -1394,7 +1377,7 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card">
+                    <div class="pricing-card" tabindex="0">
                         <h3>חנות מקוונת</h3>
                         <div class="price">500₪</div>
                         <div class="price-note">הצגת מוצרים עם קישורים לרכישה חיצונית</div>
@@ -1414,7 +1397,7 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card popular">
+                    <div class="pricing-card popular" tabindex="0">
                         <div class="popular-badge">הכי פופולרי</div>
                         <h3>אתר מקצועי</h3>
                         <div class="price">600₪</div>
@@ -1435,7 +1418,7 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card">
+                    <div class="pricing-card" tabindex="0">
                         <h3>אתר תדמיתי</h3>
                         <div class="price">800₪</div>
                         <div class="price-note">מציג את כל העסק שלך בצורה מקצועית ומרשימה</div>
@@ -1491,7 +1474,6 @@
             </div>
         </section>
 
-        <!-- הצהרת נגישות -->
         <section id="accessibility-statement" class="accessibility-statement">
             <div class="accessibility-content">
                 <h1>הצהרת נגישות</h1>
@@ -1563,9 +1545,9 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#accessibility-statement">הצהרת נגישות</a>
-                <a href="#contact">צור קשר</a>
-                <a href="#pricing">מחירים</a>
+                <a href="#accessibility-statement" aria-label="הצהרת נגישות">הצהרת נגישות</a>
+                <a href="#contact" aria-label="צור קשר">צור קשר</a>
+                <a href="#pricing" aria-label="מחירים">מחירים</a>
             </div>
             <p>&copy; 2025 יאיר - דפי נחיתה ופתרונות תוכנה. כל הזכויות שמורות.</p>
             <p>מותר לשתף, אסור להעתיק 😉</p>
@@ -1573,83 +1555,72 @@
     </footer>
 
     <script>
-        // --- פונקציות נגישות ---
-        
-        // פונקציה לפתיחת/סגירת לוח הנגישות
+        // Accessibility Functions
         function toggleAccessibilityPanel() {
             const panel = document.getElementById('accessibilityPanel');
             panel.classList.toggle('active');
+            if (panel.classList.contains('active')) {
+                panel.focus();
+            }
         }
 
-        // פונקציה לניגודיות גבוהה
         function toggleHighContrast() {
             document.body.classList.toggle('high-contrast');
             document.getElementById('highContrastOption').classList.toggle('active');
             savePreference('highContrast', document.body.classList.contains('high-contrast'));
         }
 
-        // פונקציה לגווני אפור
         function toggleGrayscale() {
             document.body.classList.toggle('grayscale');
             document.getElementById('grayscaleOption').classList.toggle('active');
             savePreference('grayscale', document.body.classList.contains('grayscale'));
         }
 
-        // פונקציה לטקסט גדול
         function toggleLargeText() {
             document.body.classList.toggle('large-text');
             document.getElementById('largeTextOption').classList.toggle('active');
             savePreference('largeText', document.body.classList.contains('large-text'));
         }
 
-        // פונקציה להדגשת פוקוס
         function toggleFocusHighlight() {
             document.body.classList.toggle('focus-highlight');
             document.getElementById('focusHighlightOption').classList.toggle('active');
             savePreference('focusHighlight', document.body.classList.contains('focus-highlight'));
         }
 
-        // פונקציה לסמן גדול
         function toggleLargeCursor() {
             document.body.classList.toggle('large-cursor');
             document.getElementById('largeCursorOption').classList.toggle('active');
             savePreference('largeCursor', document.body.classList.contains('large-cursor'));
         }
 
-        // פונקציה להצגת מדריך מקלדת
         function showKeyboardGuide() {
             document.getElementById('keyboardGuide').classList.add('active');
             document.getElementById('overlay').classList.add('active');
-            toggleAccessibilityPanel(); // סגירת לוח נגישות
+            toggleAccessibilityPanel();
+            document.getElementById('keyboardGuide').focus();
         }
 
-        // פונקציה לסגירת מדריך מקלדת
         function closeKeyboardGuide() {
             document.getElementById('keyboardGuide').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
         }
 
-        // פונקציה לאיפוס הגדרות נגישות
         function resetAccessibility() {
             document.body.classList.remove('high-contrast', 'grayscale', 'large-text', 'focus-highlight', 'large-cursor');
-            
-            // איפוס כל האפשרויות הפעילות
             document.querySelectorAll('.accessibility-option').forEach(option => {
                 option.classList.remove('active');
             });
-            
             localStorage.removeItem('accessibilitySettings');
-            toggleAccessibilityPanel(); // סגירת הלוח לאחר האיפוס
+            toggleAccessibilityPanel();
         }
 
-        // פונקציה לשמירת העדפות נגישות
         function savePreference(key, value) {
             let settings = JSON.parse(localStorage.getItem('accessibilitySettings')) || {};
             settings[key] = value;
             localStorage.setItem('accessibilitySettings', JSON.stringify(settings));
         }
 
-        // פונקציה לטעינת העדפות נגישות
         function loadPreferences() {
             const settings = JSON.parse(localStorage.getItem('accessibilitySettings'));
             if (settings) {
@@ -1676,21 +1647,18 @@
             }
         }
 
-        // קיצורי מקלדת
         document.addEventListener('keydown', function(e) {
-            // Esc - סגירת לוחות פתוחים
             if (e.key === 'Escape') {
                 document.getElementById('accessibilityPanel').classList.remove('active');
                 closeKeyboardGuide();
             }
         });
 
-        // טעינת העדפות נגישות בעת טעינת הדף
         window.addEventListener('DOMContentLoaded', function() {
             loadPreferences();
         });
 
-        // --- פונקציות גלילה קיימות ---
+        // Scroll Functions
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             const headerOffset = 80;
@@ -1701,12 +1669,9 @@
                 top: offsetPosition,
                 behavior: "smooth"
             });
-            
-            // סגירת תפריט מובייל אם פתוח
             closeMobileMenu();
         }
 
-        // אפקט מעבר רקע ל-Header בגלילה
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -1716,7 +1681,6 @@
             }
         });
 
-        // פונקציות לתפריט מובייל
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -1724,6 +1688,9 @@
             
             navLinks.classList.toggle('active');
             menuBtn.setAttribute('aria-expanded', !isExpanded);
+            if (!isExpanded) {
+                navLinks.querySelector('a').focus();
+            }
         }
 
         function closeMobileMenu() {
@@ -1734,7 +1701,6 @@
             menuBtn.setAttribute('aria-expanded', 'false');
         }
 
-        // סגירת תפריט מובייל בלחיצה מחוץ לתפריט
         document.addEventListener('click', function(event) {
             const navLinks = document.querySelector('.nav-links');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
