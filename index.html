@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="יאיר - מומחה לדפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. פתרונות טכנולוגיים לעסק שלך.">
     <title>יאיר - דפי נחיתה ופתרונות תוכנה | מומחה לדפי נחיתה ופיתוח אפליקציות</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -72,11 +73,16 @@
             font-weight: 500;
             transition: all 0.3s ease;
             cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover, 
+        .nav-links a:focus {
             color: #FFD700;
             transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
         }
 
         /* Mobile Menu Button */
@@ -88,6 +94,14 @@
             font-size: 1.5rem;
             cursor: pointer;
             flex-shrink: 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .mobile-menu-btn:hover,
+        .mobile-menu-btn:focus {
+            background: rgba(255, 255, 255, 0.1);
+            outline: 2px solid #FFD700;
         }
 
         /* Hero Section */
@@ -121,7 +135,7 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             animation: slideInRight 1s ease-out;
         }
 
@@ -130,6 +144,7 @@
             margin-bottom: 2rem;
             opacity: 0.9;
             animation: slideInLeft 1s ease-out 0.3s both;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .cta-button {
@@ -148,9 +163,11 @@
             cursor: pointer;
         }
 
-        .cta-button:hover {
+        .cta-button:hover,
+        .cta-button:focus {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            outline: 2px solid #333;
         }
 
         @keyframes slideInRight {
@@ -197,9 +214,11 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .service-card:hover {
+        .service-card:hover,
+        .service-card:focus {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            outline: 2px solid #667eea;
         }
 
         .service-icon {
@@ -215,7 +234,7 @@
         }
 
         .service-card p {
-            color: #666;
+            color: #444;
             line-height: 1.6;
         }
 
@@ -243,12 +262,14 @@
             transition: all 0.3s ease;
         }
 
-        .portfolio-preview:hover {
+        .portfolio-preview:hover,
+        .portfolio-preview:focus {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.15);
+            outline: 2px solid #FFD700;
         }
 
-        .portfolio-preview h3 {
+        .portfolio-preview h4 {
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
         }
@@ -262,7 +283,7 @@
         .project-stats {
             margin: 0.8rem 0;
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9);
         }
 
         .project-stats i {
@@ -282,9 +303,11 @@
             transition: all 0.3s ease;
         }
 
-        .demo-link:hover {
+        .demo-link:hover,
+        .demo-link:focus {
             background: rgba(255, 215, 0, 0.3);
             transform: translateY(-2px);
+            outline: 1px solid #FFD700;
         }
 
         /* Testimonials Section */
@@ -310,9 +333,11 @@
             border-left: 4px solid #667eea;
         }
 
-        .testimonial-card:hover {
+        .testimonial-card:hover,
+        .testimonial-card:focus {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            outline: 2px solid #667eea;
         }
 
         .client-avatar {
@@ -331,7 +356,7 @@
 
         .testimonial-text {
             font-style: italic;
-            color: #555;
+            color: #444;
             margin-bottom: 1rem;
             line-height: 1.6;
         }
@@ -368,7 +393,7 @@
 
         .about-text p {
             font-size: 1.1rem;
-            color: #666;
+            color: #444;
             margin-bottom: 1rem;
         }
 
@@ -393,7 +418,7 @@
         }
 
         .stat-label {
-            color: #666;
+            color: #444;
             font-size: 0.9rem;
         }
 
@@ -424,9 +449,11 @@
             position: relative;
         }
 
-        .pricing-card:hover {
+        .pricing-card:hover,
+        .pricing-card:focus {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            outline: 2px solid #667eea;
         }
 
         .pricing-card.popular {
@@ -434,7 +461,8 @@
             transform: scale(1.05);
         }
 
-        .pricing-card.popular:hover {
+        .pricing-card.popular:hover,
+        .pricing-card.popular:focus {
             transform: scale(1.05) translateY(-10px);
         }
 
@@ -466,7 +494,7 @@
 
         .price-note {
             font-size: 0.9rem;
-            color: #666;
+            color: #444;
             margin-bottom: 1.5rem;
         }
 
@@ -478,7 +506,7 @@
 
         .pricing-features li {
             padding: 0.5rem 0;
-            color: #555;
+            color: #444;
             font-size: 0.95rem;
         }
 
@@ -513,19 +541,7 @@
             gap: 1rem;
         }
 
-        .form-field {
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-        }
-
-        .form-field label {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: white;
-        }
-
-        input, textarea {
+        input, textarea, select {
             padding: 15px;
             border: none;
             border-radius: 10px;
@@ -534,8 +550,8 @@
             color: #333;
         }
 
-        input:focus, textarea:focus {
-            outline: none;
+        input:focus, textarea:focus, select:focus {
+            outline: 2px solid #FFD700;
             background: white;
         }
 
@@ -551,24 +567,11 @@
             font-size: 1rem;
         }
 
-        .submit-button:hover {
+        .submit-button:hover,
+        .submit-button:focus {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .form-consent {
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-
-        .form-consent a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-
-        .form-consent a:hover {
-            text-decoration: underline;
+            outline: 2px solid #333;
         }
 
         /* WhatsApp Floating Button */
@@ -589,11 +592,14 @@
             transition: all 0.3s ease;
             z-index: 1000;
             animation: pulse 2s infinite;
+            text-decoration: none;
         }
 
-        .whatsapp-float:hover {
+        .whatsapp-float:hover,
+        .whatsapp-float:focus {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+            outline: 2px solid white;
         }
 
         @keyframes pulse {
@@ -637,11 +643,16 @@
             text-decoration: none;
             margin: 0 1rem;
             transition: color 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 4px;
         }
 
-        .footer-links a:hover {
+        .footer-links a:hover,
+        .footer-links a:focus {
             color: white;
             text-decoration: underline;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
         }
 
         /* רכיב נגישות */
@@ -662,8 +673,10 @@
             transition: all 0.3s ease;
         }
 
-        .accessibility-widget:hover {
+        .accessibility-widget:hover,
+        .accessibility-widget:focus {
             transform: scale(1.1);
+            outline: 2px solid #667eea;
         }
 
         .accessibility-panel {
@@ -694,8 +707,10 @@
             transition: background 0.2s ease;
         }
 
-        .accessibility-option:hover {
+        .accessibility-option:hover,
+        .accessibility-option:focus {
             background: #f5f5f5;
+            outline: 1px solid #667eea;
         }
 
         .accessibility-option i {
@@ -803,6 +818,14 @@
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .close-guide:hover,
+        .close-guide:focus {
+            background: #f5f5f5;
+            outline: 1px solid #667eea;
         }
 
         /* שכבת overlay */
@@ -874,85 +897,23 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* מדיניות פרטיות ותנאי שימוש */
-        .legal-pages {
-            background: white;
-            padding: 3rem 0;
-            direction: rtl;
+        /* סגנונות לנגישות נוספת */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .legal-content h1 {
-            color: #333;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .legal-section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-
-        .legal-section h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        .legal-section h3 {
-            color: #555;
-            margin: 1.5rem 0 0.5rem 0;
-        }
-
-        /* הסכמה ל-Cookies */
-        .cookie-consent {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            z-index: 10000;
-            display: none;
-        }
-
-        .cookie-consent.active {
-            display: block;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        .cookie-buttons {
-            margin-top: 1rem;
-        }
-
-        .cookie-btn {
-            background: #FFD700;
-            color: #333;
-            border: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .cookie-btn.secondary {
-            background: transparent;
-            color: white;
-            border: 1px solid white;
+        /* פוקוס גלובלי */
+        *:focus {
+            outline: 2px solid #007acc;
+            outline-offset: 2px;
         }
 
         /* Mobile Responsive - תיקונים */
@@ -1002,7 +963,8 @@
                 transform: none;
             }
 
-            .pricing-card.popular:hover {
+            .pricing-card.popular:hover,
+            .pricing-card.popular:focus {
                 transform: translateY(-10px);
             }
 
@@ -1050,15 +1012,6 @@
             .contact-details {
                 grid-template-columns: 1fr;
             }
-
-            .cookie-consent {
-                padding: 0.8rem;
-            }
-
-            .cookie-btn {
-                padding: 0.4rem 0.8rem;
-                margin: 0.2rem;
-            }
         }
 
         /* תיקון נוסף למסכים קטנים מאוד */
@@ -1096,6 +1049,7 @@
 
         .skip-link:focus {
             top: 6px;
+            outline: 2px solid #FFD700;
         }
     </style>
 </head>
@@ -1103,59 +1057,48 @@
     <!-- סקיפ לינקים לניווט מהיר -->
     <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
 
-    <!-- הסכמה ל-Cookies -->
-    <div id="cookieConsent" class="cookie-consent">
-        <p>אנו משתמשים בקובצי Cookie כדי לשפר את חווית הגלישה שלך. 
-           <a href="#privacy-policy" style="color: #FFD700;">קרא עוד במדיניות הפרטיות</a>
-        </p>
-        <div class="cookie-buttons">
-            <button class="cookie-btn" onclick="acceptCookies()">אישור</button>
-            <button class="cookie-btn secondary" onclick="declineCookies()">דחייה</button>
-        </div>
-    </div>
-
     <!-- רכיב נגישות -->
     <div class="accessibility-widget" onclick="toggleAccessibilityPanel()" aria-label="פתח לוח נגישות" role="button" tabindex="0">
         <i class="fas fa-universal-access" aria-hidden="true"></i>
     </div>
 
     <div class="accessibility-panel" id="accessibilityPanel">
-        <div class="accessibility-option" onclick="toggleHighContrast(false)" id="highContrastOption">
-            <i class="fas fa-adjust"></i>
+        <div class="accessibility-option" onclick="toggleHighContrast()" id="highContrastOption" tabindex="0" role="button">
+            <i class="fas fa-adjust" aria-hidden="true"></i>
             <span>ניגודיות גבוהה</span>
         </div>
-        <div class="accessibility-option" onclick="toggleGrayscale(false)" id="grayscaleOption">
-            <i class="fas fa-palette"></i>
+        <div class="accessibility-option" onclick="toggleGrayscale()" id="grayscaleOption" tabindex="0" role="button">
+            <i class="fas fa-palette" aria-hidden="true"></i>
             <span>גווני אפור</span>
         </div>
-        <div class="accessibility-option" onclick="toggleLargeText(false)" id="largeTextOption">
-            <i class="fas fa-text-height"></i>
+        <div class="accessibility-option" onclick="toggleLargeText()" id="largeTextOption" tabindex="0" role="button">
+            <i class="fas fa-text-height" aria-hidden="true"></i>
             <span>גדל טקסט</span>
         </div>
-        <div class="accessibility-option" onclick="toggleFocusHighlight(false)" id="focusHighlightOption">
-            <i class="fas fa-mouse-pointer"></i>
+        <div class="accessibility-option" onclick="toggleFocusHighlight()" id="focusHighlightOption" tabindex="0" role="button">
+            <i class="fas fa-mouse-pointer" aria-hidden="true"></i>
             <span>הדגשת פוקוס</span>
         </div>
-        <div class="accessibility-option" onclick="toggleLargeCursor(false)" id="largeCursorOption">
-            <i class="fas fa-expand-arrows-alt"></i>
+        <div class="accessibility-option" onclick="toggleLargeCursor()" id="largeCursorOption" tabindex="0" role="button">
+            <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
             <span>סמן גדול</span>
         </div>
-        <div class="accessibility-option" onclick="showKeyboardGuide()">
-            <i class="fas fa-keyboard"></i>
+        <div class="accessibility-option" onclick="showKeyboardGuide()" tabindex="0" role="button">
+            <i class="fas fa-keyboard" aria-hidden="true"></i>
             <span>מדריך מקלדת</span>
         </div>
-        <div class="accessibility-option" onclick="resetAccessibility()">
-            <i class="fas fa-undo"></i>
+        <div class="accessibility-option" onclick="resetAccessibility()" tabindex="0" role="button">
+            <i class="fas fa-undo" aria-hidden="true"></i>
             <span>אפס הגדרות</span>
         </div>
     </div>
 
     <!-- מדריך מקלדת -->
-    <div class="keyboard-guide" id="keyboardGuide">
+    <div class="keyboard-guide" id="keyboardGuide" role="dialog" aria-labelledby="keyboardGuideTitle" aria-modal="true">
         <button class="close-guide" onclick="closeKeyboardGuide()" aria-label="סגור מדריך מקלדת">
-            <i class="fas fa-times"></i>
+            <i class="fas fa-times" aria-hidden="true"></i>
         </button>
-        <h3>קיצורי מקלדת</h3>
+        <h3 id="keyboardGuideTitle">קיצורי מקלדת</h3>
         <div class="keyboard-shortcut">
             <span>Tab</span>
             <span>ניווט בין אלמנטים</span>
@@ -1181,38 +1124,38 @@
     <div class="overlay" id="overlay" onclick="closeKeyboardGuide()"></div>
 
     <!-- כפתור וואצאפ צף -->
-    <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואצאפ">
+    <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואצאפ" rel="noopener noreferrer">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <div class="whatsapp-text">צור קשר בוואצאפ</div>
     </a>
 
-    <header>
-        <nav class="container">
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="ניווט ראשי">
             <div class="logo-container">
                 <div class="logo-text">יאיר - דפי נחיתה ופיתוח</div>
             </div>
-            <ul class="nav-links">
-                <li><a onclick="scrollToSection('hero')" tabindex="0">בית</a></li>
-                <li><a onclick="scrollToSection('services')" tabindex="0">שירותים</a></li>
-                <li><a onclick="scrollToSection('portfolio')" tabindex="0">דוגמאות עבודות</a></li>
-                <li><a onclick="scrollToSection('testimonials')" tabindex="0">המלצות</a></li>
-                <li><a onclick="scrollToSection('about')" tabindex="0">קצת עליי</a></li>
-                <li><a onclick="scrollToSection('pricing')" tabindex="0">מחירים</a></li>
-                <li><a onclick="scrollToSection('contact')" tabindex="0">צור קשר</a></li>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a onclick="scrollToSection('hero')" tabindex="0" role="menuitem">בית</a></li>
+                <li role="none"><a onclick="scrollToSection('services')" tabindex="0" role="menuitem">שירותים</a></li>
+                <li role="none"><a onclick="scrollToSection('portfolio')" tabindex="0" role="menuitem">דוגמאות עבודות</a></li>
+                <li role="none"><a onclick="scrollToSection('testimonials')" tabindex="0" role="menuitem">המלצות</a></li>
+                <li role="none"><a onclick="scrollToSection('about')" tabindex="0" role="menuitem">קצת עליי</a></li>
+                <li role="none"><a onclick="scrollToSection('pricing')" tabindex="0" role="menuitem">מחירים</a></li>
+                <li role="none"><a onclick="scrollToSection('contact')" tabindex="0" role="menuitem">צור קשר</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="תפריט ניווט">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="תפריט ניווט" aria-expanded="false" aria-controls="nav-links">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
     </header>
 
-    <main id="main-content">
-        <section id="hero" class="hero">
+    <main id="main-content" role="main">
+        <section id="hero" class="hero" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero-content">
-                    <h1>דפי נחיתה ופתרונות תוכנה שמייצרים תוצאות</h1>
+                    <h1 id="hero-title">דפי נחיתה ופתרונות תוכנה שמייצרים תוצאות</h1>
                     <p>אני יאיר, מומחה לדפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. מביא לעסק שלך בדיוק את מה שהוא צריך - לקוחות ופתרונות טכנולוגיים מתקדמים.</p>
-                    <button class="cta-button" onclick="scrollToSection('contact')">
+                    <button class="cta-button" onclick="scrollToSection('contact')" aria-label="צור קשר לפרטים על אתר או אפליקציה">
                         <i class="fas fa-rocket" aria-hidden="true"></i>
                         רוצה אתר או אפליקציה שעובדים עבורך 24/7?
                     </button>
@@ -1220,11 +1163,11 @@
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="services" class="services" aria-labelledby="services-title">
             <div class="container">
-                <h2 class="section-title">מה אני מביא לשולחן?</h2>
+                <h2 id="services-title" class="section-title">מה אני מביא לשולחן?</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0" role="article">
                         <div class="service-icon">
                             <i class="fas fa-bullseye" aria-hidden="true"></i>
                         </div>
@@ -1232,7 +1175,7 @@
                         <p>דפים שבנויים בדיוק כדי להמיר גולשים ללקוחות. כל אלמנט מתוכנן לתוצאה מקסימלית.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0" role="article">
                         <div class="service-icon">
                             <i class="fas fa-cogs" aria-hidden="true"></i>
                         </div>
@@ -1240,7 +1183,7 @@
                         <p>פיתוח אפליקציות Full-Stack מתקדמות - ממערכות ניהול פרויקטים ועד CRM מותאמים.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0" role="article">
                         <div class="service-icon">
                             <i class="fas fa-chart-line" aria-hidden="true"></i>
                         </div>
@@ -1248,7 +1191,7 @@
                         <p>פתרונות אוטומציה חכמים שחוסכים זמן ומשפרים תהליכים עסקיים.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0" role="article">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                         </div>
@@ -1256,7 +1199,7 @@
                         <p>כל מוצר שאני בונה נראה ועובד מושלם על כל מכשיר - מחשב, טאבלט או סמארטפון.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0" role="article">
                         <div class="service-icon">
                             <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
@@ -1264,7 +1207,7 @@
                         <p>עבדתי עם מותגים מובילים וחברות בכל הגדלים. אני יודע מה עובד.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" tabindex="0" role="article">
                         <div class="service-icon">
                             <i class="fas fa-handshake" aria-hidden="true"></i>
                         </div>
@@ -1275,53 +1218,53 @@
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio-teaser">
+        <section id="portfolio" class="portfolio-teaser" aria-labelledby="portfolio-title">
             <div class="container">
-                <h2 class="section-title">פרויקטים שכבר השגתי</h2>
+                <h2 id="portfolio-title" class="section-title">פרויקטים שכבר השגתי</h2>
                 <p>כמה דוגמאות מהפרויקטים שיצרתי עבור לקוחות</p>
                 
                 <div class="portfolio-grid">
-                    <div class="portfolio-preview">
-                        <h3>חידון קלקרים</h3>
+                    <div class="portfolio-preview" tabindex="0" role="article">
+                        <h4>חידון קלקרים</h4>
                         <p>חידון אינטראקטיבי עם מערכת ניקוד מתקדמת, טיימר ואנימציות מרהיבות.</p>
                         <div class="project-stats">
                             <span><i class="fas fa-chart-line" aria-hidden="true"></i> עלייה של 300% במעורבות משתמשים</span>
                         </div>
-                        <a href="https://clicker-quiz-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link">
+                        <a href="https://clicker-quiz-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link" aria-label="צפה בדמו חי של חידון קלקרים">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> צפה בדמו חי
                         </a>
                     </div>
                     
-                    <div class="portfolio-preview">
-                        <h3>מסעדה יוקרתית</h3>
+                    <div class="portfolio-preview" tabindex="0" role="article">
+                        <h4>מסעדה יוקרתית</h4>
                         <p>אתר מסעדה יוקרתי עם מערכת הזמנות מקוונת, תפריט דיגיטלי וגלריית תמונות.</p>
                         <div class="project-stats">
                             <span><i class="fas fa-chart-line" aria-hidden="true"></i> הכפלת הזמנות מקוונות בחודש הראשון</span>
                         </div>
-                        <a href="https://luxury-restaurant-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link">
+                        <a href="https://luxury-restaurant-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link" aria-label="צפה באתר המסעדה היוקרתית">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> צפה באתר המסעדה
                         </a>
                     </div>
                     
-                    <div class="portfolio-preview">
-                        <h3>מלון פרדיס</h3>
+                    <div class="portfolio-preview" tabindex="0" role="article">
+                        <h4>מלון פרדיס</h4>
                         <p>אתר מלון עם מערכת הזמנות מתקדמת, גלריית חדרים ומערכת ניהול תורים.</p>
                         <div class="project-stats">
                             <span><i class="fas fa-chart-line" aria-hidden="true"></i> שיפור תפעולי דרמטי ומשוב לקוחות חיובי</span>
                         </div>
-                        <a href="https://hotel-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link">
+                        <a href="https://hotel-example.onrender.com/index.html" target="_blank" rel="noopener noreferrer" class="demo-link" aria-label="צפה באתר מלון פרדיס">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> צפה באתר המלון
                         </a>
                     </div>
 
-                    <div class="portfolio-preview">
-                        <h3>הקוסם חיים משמיים</h3>
+                    <div class="portfolio-preview" tabindex="0" role="article">
+                        <h4>הקוסם חיים משמיים</h4>
                         <p>אתר ייחודי לקוסם עם עיצוב קסום, אנימציות מרהיבות וחוויית משתמש מדהימה.</p>
                         <div class="project-stats">
                             <span><i class="fas fa-chart-line" aria-hidden="true"></i> עלייה של 200% בפניות</span>
                             <span><i class="fas fa-star" aria-hidden="true"></i> חוויית משתמש יוצאת דופן</span>
                         </div>
-                        <a href="https://haim-4.onrender.com/haim-hamayim.html" target="_blank" rel="noopener noreferrer" class="demo-link">
+                        <a href="https://haim-4.onrender.com/haim-hamayim.html" target="_blank" rel="noopener noreferrer" class="demo-link" aria-label="גלה את הקסם של האתר לקוסם חיים משמיים">
                             <i class="fas fa-external-link-alt" aria-hidden="true"></i> גלה את הקסם
                         </a>
                     </div>
@@ -1330,63 +1273,63 @@
         </section>
 
         <!-- סקציית המלצות -->
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
             <div class="container">
-                <h2 class="section-title">מה הלקוחות אומרים?</h2>
+                <h2 id="testimonials-title" class="section-title">מה הלקוחות אומרים?</h2>
                 <p style="text-align: center; color: #666; margin-bottom: 2rem;">ההצלחה של הלקוחות שלי היא ההצלחה שלי</p>
                 
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="client-avatar">ש</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">ש</div>
                         <p class="testimonial-text">"יאיר בנה לנו דף נחיתה שהכפיל את מספר הלקוחות שלנו תוך חודש. המקצועיות והיצירתיות שלו פשוט מדהימים!"</p>
                         <div class="client-name">שירה כהן</div>
                         <div class="client-company">מנכ"לית, CleanPro</div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="client-avatar">מ</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">מ</div>
                         <p class="testimonial-text">"המערכת שיאיר פיתח לנו שינתה את כל דרך העבודה. ממשיכים לעבוד איתו על פרויקטים נוספים!"</p>
                         <div class="client-name">מיכאל לוי</div>
                         <div class="client-company">מייסד, TaskFlow</div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="client-avatar">ר</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">ר</div>
                         <p class="testimonial-text">"יחס אישי, מקצועיות ברמה גבוהה ותוצאות מעל ומעבר לציפיות. ממליץ בחום!"</p>
                         <div class="client-name">רועי פרץ</div>
                         <div class="client-company">בעלים, PhotoMaster</div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="client-avatar">ח</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">ח</div>
                         <p class="testimonial-text">"האתר שיאיר יצר עבורי כקוסם פשוט מדהים! האנימציות והעיצוב הקסום משאירים כל לקוח בהלם."</p>
                         <div class="client-name">חיים משמיים</div>
                         <div class="client-company">קוסם מקצועי</div>
                     </div>
 
-                    <div class="testimonial-card">
-                        <div class="client-avatar">א</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">א</div>
                         <p class="testimonial-text">"החידון האינטראקטיבי שיאיר פיתח לנו הגדיל את מעורבות המשתמשים ב-300%. התוצאות מדברות בעד עצמן!"</p>
                         <div class="client-name">אביב גולן</div>
                         <div class="client-company">מנהל מוצר, QuizMaster</div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="client-avatar">נ</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">נ</div>
                         <p class="testimonial-text">"אתר המסעדה שיאיר יצר לנו הכפיל את מספר ההזמנות המקוונות. הממשק אינטואיטיבי והעיצוב מרשים."</p>
                         <div class="client-name">נועה לוי</div>
                         <div class="client-company">בעלים, מסעדת 'טעם העיר'</div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="client-avatar">ד</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">ד</div>
                         <p class="testimonial-text">"מערכת ההזמנות למלון שיאיר פיתח שיפרה את התפעול שלנו באופן דרמטי. הלקוחות מרוצים ואנחנו מרוצים!"</p>
                         <div class="client-name">דניאל כהן</div>
                         <div class="client-company">מנהל, מלון 'ריביירה'</div>
                     </div>
 
-                    <div class="testimonial-card">
-                        <div class="client-avatar">י</div>
+                    <div class="testimonial-card" tabindex="0" role="article">
+                        <div class="client-avatar" aria-hidden="true">י</div>
                         <p class="testimonial-text">"האפליקציה לעסק שיאיר פיתח הפכה לכלי העבודה המרכזי שלנו. אינטואיטיבית, מהירה ומדויקת."</p>
                         <div class="client-name">יעקב מזרחי</div>
                         <div class="client-company">בעלים, 'מזרחי פתרונות'</div>
@@ -1395,11 +1338,11 @@
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="about" class="about" aria-labelledby="about-title">
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2>קצת עליי</h2>
+                        <h2 id="about-title">קצת עליי</h2>
                         <p>שמי יאיר ואני מתמחה ביצירת דפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. עבדתי עם מותגים גדולים וראיתי איך פתרון טכנולוגי נכון יכול לשנות לחלוטין את התוצאות של עסק.</p>
                         
                         <p>אני לא רק בונה אתרים ואפליקציות - אני מהנדס תוצאות. כל פרויקט מתחיל בהבנה עמוקה של הצרכים שלך ומסתיים רק כשאתה רואה תוצאות אמיתיות.</p>
@@ -1408,19 +1351,19 @@
                     </div>
                     
                     <div class="stats">
-                        <div class="stat">
+                        <div class="stat" tabindex="0" role="article">
                             <div class="stat-number">60+</div>
                             <div class="stat-label">פרויקטים מוצלחים</div>
                         </div>
-                        <div class="stat">
+                        <div class="stat" tabindex="0" role="article">
                             <div class="stat-number">300%</div>
                             <div class="stat-label">עלייה ממוצעת בהמרות</div>
                         </div>
-                        <div class="stat">
+                        <div class="stat" tabindex="0" role="article">
                             <div class="stat-number">40+</div>
                             <div class="stat-label">עסקים מרוצים</div>
                         </div>
-                        <div class="stat">
+                        <div class="stat" tabindex="0" role="article">
                             <div class="stat-number">24/7</div>
                             <div class="stat-label">זמינות לתמיכה</div>
                         </div>
@@ -1430,13 +1373,13 @@
         </section>
 
         <!-- סקציית מחירים מעודכנת עם 4 חבילות -->
-        <section id="pricing" class="pricing">
+        <section id="pricing" class="pricing" aria-labelledby="pricing-title">
             <div class="container">
-                <h2 class="section-title">מחירים שקופים</h2>
+                <h2 id="pricing-title" class="section-title">מחירים שקופים</h2>
                 <p style="text-align: center; color: #666; margin-bottom: 2rem;">מחירים שמתחילים נמוך - תוצאות שמגיעות גבוה</p>
                 
                 <div class="pricing-cards">
-                    <div class="pricing-card">
+                    <div class="pricing-card" tabindex="0" role="article">
                         <h3>דף נחיתה בסיסי</h3>
                         <div class="price">400₪</div>
                         <div class="price-note">אתר קצר וממוקד שממיר גולשים ללקוחות</div>
@@ -1449,13 +1392,13 @@
                             <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 7 ימים</li>
                             <li><i class="fas fa-check" aria-hidden="true"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
                         </ul>
-                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20דף%20נחיתה%20בסיסי" target="_blank" class="cta-button">
+                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20דף%20נחיתה%20בסיסי" target="_blank" class="cta-button" aria-label="הזמן עכשיו חבילת דף נחיתה בסיסי">
                             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                             הזמן עכשיו
                         </a>
                     </div>
                     
-                    <div class="pricing-card">
+                    <div class="pricing-card" tabindex="0" role="article">
                         <h3>חנות מקוונת</h3>
                         <div class="price">500₪</div>
                         <div class="price-note">הצגת מוצרים עם קישורים לרכישה חיצונית</div>
@@ -1469,13 +1412,13 @@
                             <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 14 יום</li>
                             <li><i class="fas fa-check" aria-hidden="true"></i> עזרה בהגדרת מערכת רכישה חיצונית</li>
                         </ul>
-                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20חנות%20מקוונת" target="_blank" class="cta-button">
+                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20חנות%20מקוונת" target="_blank" class="cta-button" aria-label="בחר בחבילת חנות מקוונת">
                             <i class="fas fa-store" aria-hidden="true"></i>
                             בחר בחבילה
                         </a>
                     </div>
                     
-                    <div class="pricing-card popular">
+                    <div class="pricing-card popular" tabindex="0" role="article">
                         <div class="popular-badge">הכי פופולרי</div>
                         <h3>אתר מקצועי</h3>
                         <div class="price">600₪</div>
@@ -1490,13 +1433,13 @@
                             <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 30 יום</li>
                             <li><i class="fas fa-check" aria-hidden="true"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
                         </ul>
-                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20מקצועי" target="_blank" class="cta-button">
+                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20מקצועי" target="_blank" class="cta-button" aria-label="בחר בחבילת אתר מקצועי">
                             <i class="fas fa-star" aria-hidden="true"></i>
                             בחר בחבילה
                         </a>
                     </div>
                     
-                    <div class="pricing-card">
+                    <div class="pricing-card" tabindex="0" role="article">
                         <h3>אתר תדמיתי</h3>
                         <div class="price">800₪</div>
                         <div class="price-note">מציג את כל העסק שלך בצורה מקצועית ומרשימה</div>
@@ -1511,7 +1454,7 @@
                             <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 30 יום</li>
                             <li><i class="fas fa-check" aria-hidden="true"></i> קרדיט "נבנה על ידי יאיר" בתחתית האתר</li>
                         </ul>
-                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20תדמיתי" target="_blank" class="cta-button">
+                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20אתר%20תדמיתי" target="_blank" class="cta-button" aria-label="בחר בחבילת אתר תדמיתי">
                             <i class="fas fa-crown" aria-hidden="true"></i>
                             בחר בחבילה
                         </a>
@@ -1525,42 +1468,24 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container">
-                <h2 class="section-title">מוכן להתחיל?</h2>
+                <h2 id="contact-title" class="section-title">מוכן להתחיל?</h2>
                 <p>בואו נדבר על איך דף נחיתה או אפליקציה יכולים לשנות את העסק שלך</p>
 
-                <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST" aria-labelledby="contact-title">
                     <div class="form-group">
                         <div class="form-row">
-                            <div class="form-field">
-                                <label for="name">שם מלא *</label>
-                                <input type="text" id="name" name="name" placeholder="השם שלך" required>
-                            </div>
-                            <div class="form-field">
-                                <label for="email">אימייל *</label>
-                                <input type="email" id="email" name="email" placeholder="אימייל" required>
-                            </div>
+                            <input type="text" id="user-name" name="name" placeholder="השם שלך" required aria-required="true" aria-label="שם מלא">
+                            <input type="email" id="user-email" name="email" placeholder="אימייל" required aria-required="true" aria-label="כתובת אימייל">
                         </div>
-                        <div class="form-field">
-                            <label for="phone">טלפון</label>
-                            <input type="tel" id="phone" name="phone" placeholder="טלפון">
-                        </div>
-                        <div class="form-field">
-                            <label for="message">הודעה *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">
+                        <input type="tel" id="user-phone" name="phone" placeholder="טלפון" aria-label="מספר טלפון">
+                        <textarea id="user-message" name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required aria-required="true" aria-label="הודעה"></textarea>
+                        <button type="submit" class="submit-button" aria-label="שלח הודעה">
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             שלח הודעה
                         </button>
                     </div>
-                    <p class="form-consent">
-                        בלחיצה על 'שלח', אני מאשר את 
-                        <a href="#terms-of-use">תנאי השימוש</a> 
-                        ואת 
-                        <a href="#privacy-policy">מדיניות הפרטיות</a>.
-                    </p>
                 </form>
 
                 <div style="margin-top: 2rem;">
@@ -1571,9 +1496,9 @@
         </section>
 
         <!-- הצהרת נגישות -->
-        <section id="accessibility-statement" class="accessibility-statement">
+        <section id="accessibility-statement" class="accessibility-statement" aria-labelledby="accessibility-title">
             <div class="accessibility-content">
-                <h1>הצהרת נגישות</h1>
+                <h1 id="accessibility-title">הצהרת נגישות</h1>
                 
                 <div class="accessibility-section">
                     <h2>רמת הנגישות</h2>
@@ -1637,135 +1562,21 @@
                 </div>
             </div>
         </section>
-
-        <!-- מדיניות פרטיות -->
-        <section id="privacy-policy" class="legal-pages">
-            <div class="legal-content">
-                <h1>מדיניות פרטיות</h1>
-                
-                <div class="legal-section">
-                    <h2>מבוא</h2>
-                    <p>מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים, מגנים ומחש�ים את המידע האישי שלך באתר שלנו.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>איסוף מידע</h2>
-                    <p>אנו אוספים את סוגי המידע הבאים:</p>
-                    <ul>
-                        <li>מידע אישי שהמשתמשים מספקים בטופסי יצירת קשר (שם, אימייל, טלפון)</li>
-                        <li>נתוני שימוש באתר באמצעות כלי ניתוח כמו Google Analytics</li>
-                        <li>קובצי Cookie לניתוח תנועה ושיפור חווית המשתמש</li>
-                    </ul>
-                </div>
-
-                <div class="legal-section">
-                    <h2>שימוש במידע</h2>
-                    <p>המידע שנאסף משמש למטרות הבאות:</p>
-                    <ul>
-                        <li>מתן שירות וייעוץ מקצועי</li>
-                        <li>שיפור חווית המשתמש באתר</li>
-                        <li>ניתוח סטטיסטיקות שימוש</li>
-                        <li>תקשורת עם לקוחות פוטנציאליים</li>
-                    </ul>
-                </div>
-
-                <div class="legal-section">
-                    <h2>אבטחת מידע</h2>
-                    <p>אנו מיישמים אמצעי אבטחה מתאימים להגנה על המידע האישי שלך מפני גישה, שימוש או חשיפה לא מורשים.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>שיתוף מידע</h2>
-                    <p>איננו משתפים מידע אישי עם צדדים שלישיים, למעט במקרים הבאים:</p>
-                    <ul>
-                        <li>כאשר נדרש על פי חוק</li>
-                        <li>להגנה על זכויותינו המשפטיות</li>
-                        <li>עם ספקי שירותים נאמנים המסייעים לנו בהפעלת האתר</li>
-                    </ul>
-                </div>
-
-                <div class="legal-section">
-                    <h2>זכויותיך</h2>
-                    <p>לך הזכות לבקש:</p>
-                    <ul>
-                        <li>גישה למידע האישי שלך</li>
-                        <li>תיקון מידע לא מדויק</li>
-                        <li>מחיקת המידע האישי שלך</li>
-                        <li>הגבלת העיבוד של המידע שלך</li>
-                    </ul>
-                    <p>למימוש זכויותיך, פנה אלינו בכתובת: przyyryair@gmail.com</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>תאריך עדכון אחרון</h2>
-                    <p>מדיניות פרטיות זו עודכנה לאחרונה ב-15 בדצמבר 2024.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- תנאי שימוש -->
-        <section id="terms-of-use" class="legal-pages" style="background: #f8f9fa;">
-            <div class="legal-content">
-                <h1>תנאי שימוש</h1>
-                
-                <div class="legal-section">
-                    <h2>קבלת התנאים</h2>
-                    <p>בגלישה ובשימוש באתר זה, אתה מסכים לתנאי שימוש אלו. אם אינך מסכים לתנאים אלו, אנא הימנע משימוש באתר.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>זכויות יוצרים</h2>
-                    <p>כל הזכויות בתוכן, העיצוב, הקוד והחומרים האחרים באתר שמורות © 2024 יאיר - דפי נחיתה ופתרונות תוכנה.</p>
-                    <p>מותר לשתף קישורים לאתר, אך אסור להעתיק, לשכפל או להפיץ את התוכן ללא אישור מפורש בכתב.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>הגבלת אחריות</h2>
-                    <p>המידע באתר מובא כשירות ואינו מהווה ייעוץ מקצועי או התחייבות לתוצאות.</p>
-                    <p>אנו משתדלים לשמור על דיוק המידע, אך איננו אחראים לטעויות או להשמטות.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>קישורים חיצוניים</h2>
-                    <p>האתר עשוי לכלול קישורים לאתרים חיצוניים. איננו אחראים לתוכן או למדיניות הפרטיות של אתרים אלו.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>שינויים בתנאים</h2>
-                    <p>אנו שומרים על הזכות לעדכן תנאי שימוש אלו מעת לעת. עדכונים ייכנסו לתוקף עם פרסומם באתר.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>תקשורת</h2>
-                    <p>פניות יתקבלו רק דרך ערוצי התקשורת הרשמיים המפורסמים באתר.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>תאריך עדכון אחרון</h2>
-                    <p>תנאי שימוש אלו עודכנו לאחרונה ב-15 בדצמבר 2024.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-links">
                 <a href="#accessibility-statement">הצהרת נגישות</a>
-                <a href="#privacy-policy">מדיניות פרטיות</a>
-                <a href="#terms-of-use">תנאי שימוש</a>
                 <a href="#contact">צור קשר</a>
                 <a href="#pricing">מחירים</a>
             </div>
-            <p>&copy; 2024 יאיר - דפי נחיתה ופתרונות תוכנה. כל הזכויות שמורות.</p>
+            <p>&copy; 2025 יאיר - דפי נחיתה ופתרונות תוכנה. כל הזכויות שמורות.</p>
             <p>מותר לשתף, אסור להעתיק 😉</p>
         </div>
     </footer>
 
     <script>
-        // --- משתנים גלובליים לניהול מצב הנגישות ---
-        let isInitialLoad = true;
-
         // --- פונקציות נגישות ---
         
         // פונקציה לפתיחת/סגירת לוח הנגישות
@@ -1775,48 +1586,38 @@
         }
 
         // פונקציה לניגודיות גבוהה
-        function toggleHighContrast(fromUser = true) {
+        function toggleHighContrast() {
             document.body.classList.toggle('high-contrast');
             document.getElementById('highContrastOption').classList.toggle('active');
-            if (fromUser && !isInitialLoad) {
-                savePreference('highContrast', document.body.classList.contains('high-contrast'));
-            }
+            savePreference('highContrast', document.body.classList.contains('high-contrast'));
         }
 
         // פונקציה לגווני אפור
-        function toggleGrayscale(fromUser = true) {
+        function toggleGrayscale() {
             document.body.classList.toggle('grayscale');
             document.getElementById('grayscaleOption').classList.toggle('active');
-            if (fromUser && !isInitialLoad) {
-                savePreference('grayscale', document.body.classList.contains('grayscale'));
-            }
+            savePreference('grayscale', document.body.classList.contains('grayscale'));
         }
 
         // פונקציה לטקסט גדול
-        function toggleLargeText(fromUser = true) {
+        function toggleLargeText() {
             document.body.classList.toggle('large-text');
             document.getElementById('largeTextOption').classList.toggle('active');
-            if (fromUser && !isInitialLoad) {
-                savePreference('largeText', document.body.classList.contains('large-text'));
-            }
+            savePreference('largeText', document.body.classList.contains('large-text'));
         }
 
         // פונקציה להדגשת פוקוס
-        function toggleFocusHighlight(fromUser = true) {
+        function toggleFocusHighlight() {
             document.body.classList.toggle('focus-highlight');
             document.getElementById('focusHighlightOption').classList.toggle('active');
-            if (fromUser && !isInitialLoad) {
-                savePreference('focusHighlight', document.body.classList.contains('focus-highlight'));
-            }
+            savePreference('focusHighlight', document.body.classList.contains('focus-highlight'));
         }
 
         // פונקציה לסמן גדול
-        function toggleLargeCursor(fromUser = true) {
+        function toggleLargeCursor() {
             document.body.classList.toggle('large-cursor');
             document.getElementById('largeCursorOption').classList.toggle('active');
-            if (fromUser && !isInitialLoad) {
-                savePreference('largeCursor', document.body.classList.contains('large-cursor'));
-            }
+            savePreference('largeCursor', document.body.classList.contains('large-cursor'));
         }
 
         // פונקציה להצגת מדריך מקלדת
@@ -1856,8 +1657,6 @@
         function loadPreferences() {
             const settings = JSON.parse(localStorage.getItem('accessibilitySettings'));
             if (settings) {
-                isInitialLoad = true;
-                
                 if (settings.highContrast) {
                     document.body.classList.add('high-contrast');
                     document.getElementById('highContrastOption').classList.add('active');
@@ -1878,32 +1677,10 @@
                     document.body.classList.add('large-cursor');
                     document.getElementById('largeCursorOption').classList.add('active');
                 }
-                
-                // לאחר הטעינה, אפשר שוב שמירה
-                setTimeout(() => {
-                    isInitialLoad = false;
-                }, 100);
             }
         }
 
-        // --- פונקציות Cookies ---
-        function showCookieConsent() {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                document.getElementById('cookieConsent').classList.add('active');
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookieConsent').classList.remove('active');
-        }
-
-        function declineCookies() {
-            localStorage.setItem('cookiesAccepted', 'false');
-            document.getElementById('cookieConsent').classList.remove('active');
-        }
-
-        // --- קיצורי מקלדת ---
+        // קיצורי מקלדת
         document.addEventListener('keydown', function(e) {
             // Alt + A - פתיחת לוח נגישות
             if (e.altKey && e.key === 'a') {
@@ -1915,17 +1692,12 @@
             if (e.key === 'Escape') {
                 document.getElementById('accessibilityPanel').classList.remove('active');
                 closeKeyboardGuide();
-                document.getElementById('cookieConsent').classList.remove('active');
             }
         });
 
-        // --- אתחול האתר ---
+        // טעינת העדפות נגישות בעת טעינת הדף
         window.addEventListener('DOMContentLoaded', function() {
-            // טעינת העדפות נגישות
             loadPreferences();
-            
-            // הצגת הסכמת Cookies
-            showCookieConsent();
             
             // הוספת תמיכה ב-ARIA
             document.querySelectorAll('button, a').forEach(el => {
@@ -1969,12 +1741,19 @@
         // פונקציות לתפריט מובייל
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const isExpanded = navLinks.classList.contains('active');
+            
             navLinks.classList.toggle('active');
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
         }
 
         function closeMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
             navLinks.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
         }
 
         // סגירת תפריט מובייל בלחיצה מחוץ לתפריט
