@@ -1115,10 +1115,6 @@
             <span>Esc</span>
             <span>יציאה/ביטול</span>
         </div>
-        <div class="keyboard-shortcut">
-            <span>Alt + A</span>
-            <span>פתיחת לוח נגישות</span>
-        </div>
     </div>
 
     <div class="overlay" id="overlay" onclick="closeKeyboardGuide()"></div>
@@ -1129,19 +1125,19 @@
         <div class="whatsapp-text">צור קשר בוואצאפ</div>
     </a>
 
-    <header role="banner">
-        <nav class="container" role="navigation" aria-label="ניווט ראשי">
+    <header>
+        <nav class="container" aria-label="ניווט ראשי">
             <div class="logo-container">
                 <div class="logo-text">יאיר - דפי נחיתה ופיתוח</div>
             </div>
-            <ul class="nav-links" role="menubar">
-                <li role="none"><a onclick="scrollToSection('hero')" tabindex="0" role="menuitem">בית</a></li>
-                <li role="none"><a onclick="scrollToSection('services')" tabindex="0" role="menuitem">שירותים</a></li>
-                <li role="none"><a onclick="scrollToSection('portfolio')" tabindex="0" role="menuitem">דוגמאות עבודות</a></li>
-                <li role="none"><a onclick="scrollToSection('testimonials')" tabindex="0" role="menuitem">המלצות</a></li>
-                <li role="none"><a onclick="scrollToSection('about')" tabindex="0" role="menuitem">קצת עליי</a></li>
-                <li role="none"><a onclick="scrollToSection('pricing')" tabindex="0" role="menuitem">מחירים</a></li>
-                <li role="none"><a onclick="scrollToSection('contact')" tabindex="0" role="menuitem">צור קשר</a></li>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('hero')" tabindex="0">בית</a></li>
+                <li><a onclick="scrollToSection('services')" tabindex="0">שירותים</a></li>
+                <li><a onclick="scrollToSection('portfolio')" tabindex="0">דוגמאות עבודות</a></li>
+                <li><a onclick="scrollToSection('testimonials')" tabindex="0">המלצות</a></li>
+                <li><a onclick="scrollToSection('about')" tabindex="0">קצת עליי</a></li>
+                <li><a onclick="scrollToSection('pricing')" tabindex="0">מחירים</a></li>
+                <li><a onclick="scrollToSection('contact')" tabindex="0">צור קשר</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="תפריט ניווט" aria-expanded="false" aria-controls="nav-links">
                 <i class="fas fa-bars" aria-hidden="true"></i>
@@ -1149,11 +1145,11 @@
         </nav>
     </header>
 
-    <main id="main-content" role="main">
-        <section id="hero" class="hero" aria-labelledby="hero-title">
+    <main id="main-content">
+        <section id="hero" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="hero-title">דפי נחיתה ופתרונות תוכנה שמייצרים תוצאות</h1>
+                    <h1>דפי נחיתה ופתרונות תוכנה שמייצרים תוצאות</h1>
                     <p>אני יאיר, מומחה לדפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. מביא לעסק שלך בדיוק את מה שהוא צריך - לקוחות ופתרונות טכנולוגיים מתקדמים.</p>
                     <button class="cta-button" onclick="scrollToSection('contact')" aria-label="צור קשר לפרטים על אתר או אפליקציה">
                         <i class="fas fa-rocket" aria-hidden="true"></i>
@@ -1163,11 +1159,11 @@
             </div>
         </section>
 
-        <section id="services" class="services" aria-labelledby="services-title">
+        <section id="services" class="services">
             <div class="container">
-                <h2 id="services-title" class="section-title">מה אני מביא לשולחן?</h2>
+                <h2 class="section-title">מה אני מביא לשולחן?</h2>
                 <div class="services-grid">
-                    <div class="service-card" tabindex="0" role="article">
+                    <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-bullseye" aria-hidden="true"></i>
                         </div>
@@ -1175,7 +1171,7 @@
                         <p>דפים שבנויים בדיוק כדי להמיר גולשים ללקוחות. כל אלמנט מתוכנן לתוצאה מקסימלית.</p>
                     </div>
 
-                    <div class="service-card" tabindex="0" role="article">
+                    <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-cogs" aria-hidden="true"></i>
                         </div>
@@ -1183,7 +1179,7 @@
                         <p>פיתוח אפליקציות Full-Stack מתקדמות - ממערכות ניהול פרויקטים ועד CRM מותאמים.</p>
                     </div>
 
-                    <div class="service-card" tabindex="0" role="article">
+                    <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-chart-line" aria-hidden="true"></i>
                         </div>
@@ -1191,7 +1187,7 @@
                         <p>פתרונות אוטומציה חכמים שחוסכים זמן ומשפרים תהליכים עסקיים.</p>
                     </div>
 
-                    <div class="service-card" tabindex="0" role="article">
+                    <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                         </div>
@@ -1199,7 +1195,7 @@
                         <p>כל מוצר שאני בונה נראה ועובד מושלם על כל מכשיר - מחשב, טאבלט או סמארטפון.</p>
                     </div>
 
-                    <div class="service-card" tabindex="0" role="article">
+                    <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
@@ -1207,7 +1203,7 @@
                         <p>עבדתי עם מותגים מובילים וחברות בכל הגדלים. אני יודע מה עובד.</p>
                     </div>
 
-                    <div class="service-card" tabindex="0" role="article">
+                    <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-handshake" aria-hidden="true"></i>
                         </div>
@@ -1218,13 +1214,13 @@
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio-teaser" aria-labelledby="portfolio-title">
+        <section id="portfolio" class="portfolio-teaser">
             <div class="container">
-                <h2 id="portfolio-title" class="section-title">פרויקטים שכבר השגתי</h2>
+                <h2 class="section-title">פרויקטים שכבר השגתי</h2>
                 <p>כמה דוגמאות מהפרויקטים שיצרתי עבור לקוחות</p>
                 
                 <div class="portfolio-grid">
-                    <div class="portfolio-preview" tabindex="0" role="article">
+                    <div class="portfolio-preview">
                         <h4>חידון קלקרים</h4>
                         <p>חידון אינטראקטיבי עם מערכת ניקוד מתקדמת, טיימר ואנימציות מרהיבות.</p>
                         <div class="project-stats">
@@ -1235,7 +1231,7 @@
                         </a>
                     </div>
                     
-                    <div class="portfolio-preview" tabindex="0" role="article">
+                    <div class="portfolio-preview">
                         <h4>מסעדה יוקרתית</h4>
                         <p>אתר מסעדה יוקרתי עם מערכת הזמנות מקוונת, תפריט דיגיטלי וגלריית תמונות.</p>
                         <div class="project-stats">
@@ -1246,7 +1242,7 @@
                         </a>
                     </div>
                     
-                    <div class="portfolio-preview" tabindex="0" role="article">
+                    <div class="portfolio-preview">
                         <h4>מלון פרדיס</h4>
                         <p>אתר מלון עם מערכת הזמנות מתקדמת, גלריית חדרים ומערכת ניהול תורים.</p>
                         <div class="project-stats">
@@ -1257,7 +1253,7 @@
                         </a>
                     </div>
 
-                    <div class="portfolio-preview" tabindex="0" role="article">
+                    <div class="portfolio-preview">
                         <h4>הקוסם חיים משמיים</h4>
                         <p>אתר ייחודי לקוסם עם עיצוב קסום, אנימציות מרהיבות וחוויית משתמש מדהימה.</p>
                         <div class="project-stats">
@@ -1273,62 +1269,62 @@
         </section>
 
         <!-- סקציית המלצות -->
-        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+        <section id="testimonials" class="testimonials">
             <div class="container">
-                <h2 id="testimonials-title" class="section-title">מה הלקוחות אומרים?</h2>
+                <h2 class="section-title">מה הלקוחות אומרים?</h2>
                 <p style="text-align: center; color: #666; margin-bottom: 2rem;">ההצלחה של הלקוחות שלי היא ההצלחה שלי</p>
                 
                 <div class="testimonials-grid">
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">ש</div>
                         <p class="testimonial-text">"יאיר בנה לנו דף נחיתה שהכפיל את מספר הלקוחות שלנו תוך חודש. המקצועיות והיצירתיות שלו פשוט מדהימים!"</p>
                         <div class="client-name">שירה כהן</div>
                         <div class="client-company">מנכ"לית, CleanPro</div>
                     </div>
                     
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">מ</div>
                         <p class="testimonial-text">"המערכת שיאיר פיתח לנו שינתה את כל דרך העבודה. ממשיכים לעבוד איתו על פרויקטים נוספים!"</p>
                         <div class="client-name">מיכאל לוי</div>
                         <div class="client-company">מייסד, TaskFlow</div>
                     </div>
                     
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">ר</div>
                         <p class="testimonial-text">"יחס אישי, מקצועיות ברמה גבוהה ותוצאות מעל ומעבר לציפיות. ממליץ בחום!"</p>
                         <div class="client-name">רועי פרץ</div>
                         <div class="client-company">בעלים, PhotoMaster</div>
                     </div>
                     
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">ח</div>
                         <p class="testimonial-text">"האתר שיאיר יצר עבורי כקוסם פשוט מדהים! האנימציות והעיצוב הקסום משאירים כל לקוח בהלם."</p>
                         <div class="client-name">חיים משמיים</div>
                         <div class="client-company">קוסם מקצועי</div>
                     </div>
 
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">א</div>
                         <p class="testimonial-text">"החידון האינטראקטיבי שיאיר פיתח לנו הגדיל את מעורבות המשתמשים ב-300%. התוצאות מדברות בעד עצמן!"</p>
                         <div class="client-name">אביב גולן</div>
                         <div class="client-company">מנהל מוצר, QuizMaster</div>
                     </div>
                     
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">נ</div>
                         <p class="testimonial-text">"אתר המסעדה שיאיר יצר לנו הכפיל את מספר ההזמנות המקוונות. הממשק אינטואיטיבי והעיצוב מרשים."</p>
                         <div class="client-name">נועה לוי</div>
                         <div class="client-company">בעלים, מסעדת 'טעם העיר'</div>
                     </div>
                     
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">ד</div>
                         <p class="testimonial-text">"מערכת ההזמנות למלון שיאיר פיתח שיפרה את התפעול שלנו באופן דרמטי. הלקוחות מרוצים ואנחנו מרוצים!"</p>
                         <div class="client-name">דניאל כהן</div>
                         <div class="client-company">מנהל, מלון 'ריביירה'</div>
                     </div>
 
-                    <div class="testimonial-card" tabindex="0" role="article">
+                    <div class="testimonial-card">
                         <div class="client-avatar" aria-hidden="true">י</div>
                         <p class="testimonial-text">"האפליקציה לעסק שיאיר פיתח הפכה לכלי העבודה המרכזי שלנו. אינטואיטיבית, מהירה ומדויקת."</p>
                         <div class="client-name">יעקב מזרחי</div>
@@ -1338,11 +1334,11 @@
             </div>
         </section>
 
-        <section id="about" class="about" aria-labelledby="about-title">
+        <section id="about" class="about">
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2 id="about-title">קצת עליי</h2>
+                        <h2>קצת עליי</h2>
                         <p>שמי יאיר ואני מתמחה ביצירת דפי נחיתה ממירים ופיתוח אפליקציות מתקדמות. עבדתי עם מותגים גדולים וראיתי איך פתרון טכנולוגי נכון יכול לשנות לחלוטין את התוצאות של עסק.</p>
                         
                         <p>אני לא רק בונה אתרים ואפליקציות - אני מהנדס תוצאות. כל פרויקט מתחיל בהבנה עמוקה של הצרכים שלך ומסתיים רק כשאתה רואה תוצאות אמיתיות.</p>
@@ -1351,19 +1347,19 @@
                     </div>
                     
                     <div class="stats">
-                        <div class="stat" tabindex="0" role="article">
+                        <div class="stat">
                             <div class="stat-number">60+</div>
                             <div class="stat-label">פרויקטים מוצלחים</div>
                         </div>
-                        <div class="stat" tabindex="0" role="article">
+                        <div class="stat">
                             <div class="stat-number">300%</div>
                             <div class="stat-label">עלייה ממוצעת בהמרות</div>
                         </div>
-                        <div class="stat" tabindex="0" role="article">
+                        <div class="stat">
                             <div class="stat-number">40+</div>
                             <div class="stat-label">עסקים מרוצים</div>
                         </div>
-                        <div class="stat" tabindex="0" role="article">
+                        <div class="stat">
                             <div class="stat-number">24/7</div>
                             <div class="stat-label">זמינות לתמיכה</div>
                         </div>
@@ -1373,13 +1369,13 @@
         </section>
 
         <!-- סקציית מחירים מעודכנת עם 4 חבילות -->
-        <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+        <section id="pricing" class="pricing">
             <div class="container">
-                <h2 id="pricing-title" class="section-title">מחירים שקופים</h2>
+                <h2 class="section-title">מחירים שקופים</h2>
                 <p style="text-align: center; color: #666; margin-bottom: 2rem;">מחירים שמתחילים נמוך - תוצאות שמגיעות גבוה</p>
                 
                 <div class="pricing-cards">
-                    <div class="pricing-card" tabindex="0" role="article">
+                    <div class="pricing-card">
                         <h3>דף נחיתה בסיסי</h3>
                         <div class="price">400₪</div>
                         <div class="price-note">אתר קצר וממוקד שממיר גולשים ללקוחות</div>
@@ -1398,7 +1394,7 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card" tabindex="0" role="article">
+                    <div class="pricing-card">
                         <h3>חנות מקוונת</h3>
                         <div class="price">500₪</div>
                         <div class="price-note">הצגת מוצרים עם קישורים לרכישה חיצונית</div>
@@ -1418,7 +1414,7 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card popular" tabindex="0" role="article">
+                    <div class="pricing-card popular">
                         <div class="popular-badge">הכי פופולרי</div>
                         <h3>אתר מקצועי</h3>
                         <div class="price">600₪</div>
@@ -1439,7 +1435,7 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card" tabindex="0" role="article">
+                    <div class="pricing-card">
                         <h3>אתר תדמיתי</h3>
                         <div class="price">800₪</div>
                         <div class="price-note">מציג את כל העסק שלך בצורה מקצועית ומרשימה</div>
@@ -1468,19 +1464,19 @@
             </div>
         </section>
 
-        <section id="contact" class="contact" aria-labelledby="contact-title">
+        <section id="contact" class="contact">
             <div class="container">
-                <h2 id="contact-title" class="section-title">מוכן להתחיל?</h2>
+                <h2 class="section-title">מוכן להתחיל?</h2>
                 <p>בואו נדבר על איך דף נחיתה או אפליקציה יכולים לשנות את העסק שלך</p>
 
-                <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST" aria-labelledby="contact-title">
+                <form class="contact-form" action="https://formspree.io/f/xanbvdad" method="POST">
                     <div class="form-group">
                         <div class="form-row">
-                            <input type="text" id="user-name" name="name" placeholder="השם שלך" required aria-required="true" aria-label="שם מלא">
-                            <input type="email" id="user-email" name="email" placeholder="אימייל" required aria-required="true" aria-label="כתובת אימייל">
+                            <input type="text" name="name" placeholder="השם שלך" required aria-label="שם מלא">
+                            <input type="email" name="email" placeholder="אימייל" required aria-label="כתובת אימייל">
                         </div>
-                        <input type="tel" id="user-phone" name="phone" placeholder="טלפון" aria-label="מספר טלפון">
-                        <textarea id="user-message" name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required aria-required="true" aria-label="הודעה"></textarea>
+                        <input type="tel" name="phone" placeholder="טלפון" aria-label="מספר טלפון">
+                        <textarea name="message" rows="5" placeholder="ספר לי על העסק שלך ומה אתה רוצה להשיג" required aria-label="הודעה"></textarea>
                         <button type="submit" class="submit-button" aria-label="שלח הודעה">
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             שלח הודעה
@@ -1496,9 +1492,9 @@
         </section>
 
         <!-- הצהרת נגישות -->
-        <section id="accessibility-statement" class="accessibility-statement" aria-labelledby="accessibility-title">
+        <section id="accessibility-statement" class="accessibility-statement">
             <div class="accessibility-content">
-                <h1 id="accessibility-title">הצהרת נגישות</h1>
+                <h1>הצהרת נגישות</h1>
                 
                 <div class="accessibility-section">
                     <h2>רמת הנגישות</h2>
@@ -1564,7 +1560,7 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
+    <footer>
         <div class="container">
             <div class="footer-links">
                 <a href="#accessibility-statement">הצהרת נגישות</a>
@@ -1682,12 +1678,6 @@
 
         // קיצורי מקלדת
         document.addEventListener('keydown', function(e) {
-            // Alt + A - פתיחת לוח נגישות
-            if (e.altKey && e.key === 'a') {
-                e.preventDefault();
-                toggleAccessibilityPanel();
-            }
-            
             // Esc - סגירת לוחות פתוחים
             if (e.key === 'Escape') {
                 document.getElementById('accessibilityPanel').classList.remove('active');
@@ -1698,18 +1688,6 @@
         // טעינת העדפות נגישות בעת טעינת הדף
         window.addEventListener('DOMContentLoaded', function() {
             loadPreferences();
-            
-            // הוספת תמיכה ב-ARIA
-            document.querySelectorAll('button, a').forEach(el => {
-                if (!el.hasAttribute('aria-label') && !el.textContent.trim()) {
-                    el.setAttribute('aria-label', el.getAttribute('title') || 'לחץ לפעולה');
-                }
-            });
-            
-            // הוספת תמיכה ב-tabindex לאלמנטים אינטראקטיביים
-            document.querySelectorAll('.service-card, .portfolio-preview, .testimonial-card, .pricing-card').forEach(el => {
-                el.setAttribute('tabindex', '0');
-            });
         });
 
         // --- פונקציות גלילה קיימות ---
