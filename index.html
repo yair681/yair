@@ -647,6 +647,7 @@
             transition: color 0.3s ease;
             padding: 0.5rem;
             border-radius: 4px;
+            cursor: pointer; /* Ensure pointer is visible */
         }
 
         .footer-links a:hover,
@@ -724,6 +725,87 @@
         .accessibility-option.active {
             background: #e3f2fd;
             border: 1px solid #2196f3;
+        }
+
+        /* Modal General Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 5000; /* Higher than other fixed elements */
+            overflow-y: auto; /* Enable scrolling for long content */
+            padding: 20px;
+            direction: rtl; /* Ensure RTL layout */
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 95%;
+            position: relative;
+            animation: fadeInModal 0.3s ease-out;
+            margin: 50px 0; /* Add margin for scrolling visibility */
+        }
+
+        .modal-header h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .modal-body {
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .modal-body h2, .modal-body h3 {
+            color: #333;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            border-right: 4px solid #667eea;
+            padding-right: 10px;
+        }
+
+        .modal-body ul {
+            margin-right: 20px;
+            list-style-type: disc;
+            padding-right: 15px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #764ba2;
+            background: #f0f0f0;
+            outline: 2px solid #764ba2;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Accessibility Modes */
@@ -837,65 +919,12 @@
             right: 0;
             bottom: 0;
             background: rgba(0,0,0,0.5);
-            z-index: 1999;
+            z-index: 4999; /* Updated z-index */
             display: none;
         }
 
         .overlay.active {
             display: block;
-        }
-
-        /* Accessibility Statement */
-        .accessibility-statement {
-            background: white;
-            padding: 3rem 0;
-            direction: rtl;
-        }
-
-        .accessibility-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .accessibility-content h1 {
-            color: #333;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .accessibility-section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-right: 4px solid #667eea;
-        }
-
-        .accessibility-section h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        .accessibility-contact {
-            background: #e3f2fd;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .contact-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .contact-item {
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         /* Additional Accessibility Styles */
@@ -1005,6 +1034,14 @@
             .contact-details {
                 grid-template-columns: 1fr;
             }
+            
+            .modal-content {
+                width: 98%;
+                padding: 20px;
+            }
+            .modal-header h1 {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1104,8 +1141,6 @@
             <span>יציאה/ביטול</span>
         </div>
     </div>
-
-    <div class="overlay" id="overlay" onclick="closeKeyboardGuide()"></div>
 
     <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20רוצה%20להזמין%20אתר!" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואצאפ" rel="noopener noreferrer">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -1456,86 +1491,119 @@
                 </div>
             </div>
         </section>
-
-        <section id="accessibility-statement" class="accessibility-statement">
-            <div class="accessibility-content">
-                <h1>הצהרת נגישות</h1>
-                
-                <div class="accessibility-section">
-                    <h2>רמת הנגישות</h2>
-                    <p>אתר זה עומד בדרישות תקן הנגישות הישראלי ת"י 5568, המבוסס על תקן WCAG 2.0 Level AA. האתר הונגש כדי לאפשר גישה נוחה יותר לאנשים עם מוגבלויות.</p>
-                </div>
-
-                <div class="accessibility-section">
-                    <h2>הסדרי הנגישות שבוצעו באתר</h2>
-                    <ul>
-                        <li>תמיכה מלאה בניווט באמצעות מקלדת</li>
-                        <li>סרגל נגישות מתקדם עם אפשרויות התאמה אישית</li>
-                        <li>ניגודיות צבעים מותאמת לעיוורי צבעים</li>
-                        <li>אפשרות להגדלת גופן הטקסט</li>
-                        <li>מבנה HTML סמנטי ותקין</li>
-                        <li>תגיות ARIA לשיפור הקריאה בקוראי מסך</li>
-                        <li>טקסט אלטרנטיבי לכל התמונות והאייקונים</li>
-                        <li>פוקוס ברור ונראה לעין בעת ניווט במקלדת</li>
-                        <li>קישורי דילוג לניווט מהיר</li>
-                    </ul>
-                </div>
-
-                <div class="accessibility-section">
-                    <h2>חריגים ופטורים</h2>
-                    <p>למרות מאמצינו להנגיש את כל חלקי האתר, יתכנו דפים או רכיבים שעדיין אינם נגישים במלואם:</p>
-                    <ul>
-                        <li>תוכן חיצוני מאתרים אחרים שאינו בשליטתנו</li>
-                        <li>סרטונים ישנים שעדיין לא תומללו</li>
-                        <li>מסמכים ישנים בפורמט PDF</li>
-                    </ul>
-                </div>
-
-                <div class="accessibility-section">
-                    <h2>איש קשר לנושאי נגישות</h2>
-                    <p>אם נתקלתם בבעיית נגישות כלשהי באתר, או אם אתם זקוקים לסיוע, אנא צרו איתנו קשר:</p>
-                    <div class="accessibility-contact">
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <strong>רכז נגישות:</strong><br>
-                                יאיר פרץ
-                            </div>
-                            <div class="contact-item">
-                                <strong>טלפון:</strong><br>
-                                052-209-1733
-                            </div>
-                            <div class="contact-item">
-                                <strong>אימייל:</strong><br>
-                                przyyryair@gmail.com
-                            </div>
-                            <div class="contact-item">
-                                <strong>שעות פעילות:</strong><br>
-                                א'-ה' 09:00-18:00
-                            </div>
-                        </div>
-                        <p style="margin-top: 1rem;">נשמח לשמוע מכם ולסייע בכל בעיית נגישות שתעלה.</p>
-                    </div>
-                </div>
-
-                <div class="accessibility-section">
-                    <h2>תאריך עדכון אחרון</h2>
-                    <p>הצהרת נגישות זו עודכנה לאחרונה ב-15 בדצמבר 2024.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#accessibility-statement" aria-label="הצהרת נגישות">הצהרת נגישות</a>
-                <a href="#contact" aria-label="צור קשר">צור קשר</a>
-                <a href="#pricing" aria-label="מחירים">מחירים</a>
+                <a href="#" onclick="openModal('accessibilityModal'); return false;" aria-label="הצהרת נגישות">הצהרת נגישות</a>
+                <a href="#" onclick="openModal('privacyModal'); return false;" aria-label="הצהרת פרטיות">הצהרת פרטיות</a>
+                <a href="#" onclick="openModal('termsModal'); return false;" aria-label="תנאי שימוש">תנאי שימוש</a>
             </div>
             <p>&copy; 2025 יאיר - דפי נחיתה ופתרונות תוכנה. כל הזכויות שמורות.</p>
             <p>מותר לשתף, אסור להעתיק 😉</p>
         </div>
     </footer>
+    
+    <div id="accessibilityModal" class="modal" role="dialog" aria-labelledby="modalTitleAccessibility" aria-modal="true" tabindex="-1">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('accessibilityModal')" aria-label="סגור חלון"><i class="fas fa-times"></i></button>
+            <div id="modalTitleAccessibility" class="modal-header">
+                 <h1>הצהרת נגישות</h1>
+            </div>
+            <div class="modal-body">
+                <h2>רמת הנגישות</h2>
+                <p>אתר זה עומד בדרישות תקן הנגישות הישראלי ת"י 5568, המבוסס על תקן WCAG 2.0 Level AA. האתר הונגש כדי לאפשר גישה נוחה יותר לאנשים עם מוגבלויות.</p>
+            
+                <h2>הסדרי הנגישות שבוצעו באתר</h2>
+                <ul>
+                    <li>תמיכה מלאה בניווט באמצעות מקלדת</li>
+                    <li>סרגל נגישות מתקדם עם אפשרויות התאמה אישית</li>
+                    <li>ניגודיות צבעים מותאמת לעיוורי צבעים</li>
+                    <li>אפשרות להגדלת גופן הטקסט</li>
+                    <li>מבנה HTML סמנטי ותקין</li>
+                    <li>תגיות ARIA לשיפור הקריאה בקוראי מסך</li>
+                    <li>טקסט אלטרנטיבי לכל התמונות והאייקונים</li>
+                    <li>פוקוס ברור ונראה לעין בעת ניווט במקלדת</li>
+                    <li>קישורי דילוג לניווט מהיר</li>
+                </ul>
+            
+                <h2>חריגים ופטורים</h2>
+                <p>למרות מאמצינו להנגיש את כל חלקי האתר, יתכנו דפים או רכיבים שעדיין אינם נגישים במלואם:</p>
+                <ul>
+                    <li>תוכן חיצוני מאתרים אחרים שאינו בשליטתנו</li>
+                    <li>סרטונים ישנים שעדיין לא תומללו</li>
+                    <li>מסמכים ישנים בפורמט PDF</li>
+                </ul>
+            
+                <h2>איש קשר לנושאי נגישות</h2>
+                <p>אם נתקלתם בבעיית נגישות כלשהי באתר, או אם אתם זקוקים לסיוע, אנא צרו איתנו קשר:</p>
+                <div class="accessibility-contact">
+                    <div class="contact-details" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div class="contact-item" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <strong>רכז נגישות:</strong><br>
+                            יאיר פרץ
+                        </div>
+                        <div class="contact-item" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <strong>טלפון:</strong><br>
+                            052-209-1733
+                        </div>
+                        <div class="contact-item" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <strong>אימייל:</strong><br>
+                            przyyryair@gmail.com
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; background: #e3f2fd; padding: 1rem; border-radius: 8px;">נשמח לשמוע מכם ולסייע בכל בעיית נגישות שתעלה.</p>
+                </div>
+            
+                <h2>תאריך עדכון אחרון</h2>
+                <p>הצהרת נגישות זו עודכנה לאחרונה ב-15 בדצמבר 2024.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal" role="dialog" aria-labelledby="modalTitlePrivacy" aria-modal="true" tabindex="-1">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('privacyModal')" aria-label="סגור חלון"><i class="fas fa-times"></i></button>
+            <div id="modalTitlePrivacy" class="modal-header">
+                 <h1>הצהרת פרטיות</h1>
+            </div>
+            <div class="modal-body">
+                <h2>מדיניות הפרטיות שלנו</h2>
+                <p>אנו מחויבים להגן על הפרטיות של הלקוחות שלנו. מדיניות זו מסבירה כיצד אנו אוספים, משתמשים ושומרים על המידע האישי שלך.</p>
+                <h3>איסוף מידע</h3>
+                <p>אנו אוספים מידע שאתה מספק לנו מרצונך כאשר אתה ממלא טפסי יצירת קשר באתר או מתקשר איתנו דרך אמצעי תקשורת אחרים. מידע זה כולל שם, אימייל ומספר טלפון.</p>
+                <h3>שימוש במידע</h3>
+                <p>המידע נאסף אך ורק לצורך מתן השירותים שביקשת, תגובה לפניותיך ושיפור השירותים שלנו. אנו לא נשתף את המידע שלך עם צדדים שלישיים ללא הסכמתך המפורשת, למעט במקרים הנדרשים על פי חוק.</p>
+                <h3>אבטחת מידע</h3>
+                <p>אנו נוקטים באמצעי אבטחה סבירים כדי להגן על המידע האישי שלך מפני גישה, שימוש או גילוי בלתי מורשים.</p>
+                <p>תאריך עדכון אחרון: 15 בדצמבר 2024.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="termsModal" class="modal" role="dialog" aria-labelledby="modalTitleTerms" aria-modal="true" tabindex="-1">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('termsModal')" aria-label="סגור חלון"><i class="fas fa-times"></i></button>
+            <div id="modalTitleTerms" class="modal-header">
+                 <h1>תנאי שימוש</h1>
+            </div>
+            <div class="modal-body">
+                <h2>תנאים והגבלות</h2>
+                <p>השימוש באתר ובשירותים המוצעים כפוף לתנאי השימוש המפורטים להלן. בעצם השימוש באתר, אתה מסכים לתנאים אלה.</p>
+                <h3>קניין רוחני</h3>
+                <p>כל התוכן, העיצובים, הקוד והגרפיקה באתר הם קניינו הבלעדי של יאיר - דפי נחיתה ופתרונות תוכנה או ניתנים ברישיון. חל איסור מוחלט להעתיק, לשכפל או להשתמש בתוכן זה ללא אישור מראש ובכתב.</p>
+                <h3>הגבלת אחריות</h3>
+                <p>השירותים ניתנים "כמות שהם". איננו מבטיחים שהשירותים יהיו ללא שגיאות או יפעלו ללא הפרעה. איננו אחראים לנזקים ישירים או עקיפים הנובעים משימוש בשירותים.</p>
+                <h3>שינויים בתנאים</h3>
+                <p>אנו שומרים את הזכות לשנות את תנאי השימוש בכל עת. שינויים ייכנסו לתוקף עם פרסומם באתר.</p>
+                <p>תאריך עדכון אחרון: 15 בדצמבר 2024.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay" onclick="closeAllModals()"></div>
+
 
     <script>
         // Accessibility Functions
@@ -1586,7 +1654,7 @@
 
         function closeKeyboardGuide() {
             document.getElementById('keyboardGuide').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
+            // Overlay will be closed by closeAllModals if no other modal is open
         }
 
         function resetAccessibility() {
@@ -1630,12 +1698,65 @@
             }
         }
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.getElementById('accessibilityPanel').classList.remove('active');
-                closeKeyboardGuide();
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const overlay = document.getElementById('overlay');
+            
+            modal.style.display = 'flex'; // Show modal
+            overlay.classList.add('active'); // Show overlay
+            
+            // Set focus to the close button for accessibility
+            const closeButton = modal.querySelector('.close-modal');
+            if (closeButton) {
+                closeButton.focus();
             }
-        });
+            
+            // Add event listener for ESC key only when modal is open
+            document.addEventListener('keydown', handleEscKey);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'none'; // Hide modal
+            
+            // Check if any other modal or the keyboard guide is open before closing the overlay
+            const openModals = document.querySelectorAll('.modal');
+            let isAnyModalOpen = false;
+            openModals.forEach(m => {
+                if (m.style.display === 'flex') {
+                    isAnyModalOpen = true;
+                }
+            });
+
+            const isKeyboardGuideOpen = document.getElementById('keyboardGuide').classList.contains('active');
+
+            if (!isAnyModalOpen && !isKeyboardGuideOpen) {
+                document.getElementById('overlay').classList.remove('active');
+                // Remove ESC key listener if nothing is open
+                document.removeEventListener('keydown', handleEscKey);
+            }
+        }
+
+        function closeAllModals() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.getElementById('keyboardGuide').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            document.removeEventListener('keydown', handleEscKey);
+        }
+
+        // Global ESC key handler for modals and keyboard guide
+        function handleEscKey(e) {
+            if (e.key === 'Escape') {
+                closeAllModals();     // Closes all modals and keyboard guide
+                document.getElementById('accessibilityPanel').classList.remove('active'); // Close accessibility panel
+            }
+        }
+        
+        // This is a cleaner way to handle the single ESC listener for all popups/modals
+        document.addEventListener('keydown', handleEscKey);
 
         window.addEventListener('DOMContentLoaded', function() {
             loadPreferences();
@@ -1672,20 +1793,18 @@
             navLinks.classList.toggle('active');
             menuBtn.setAttribute('aria-expanded', !isExpanded);
             if (!isExpanded) {
-                navLinks.querySelector('a').focus();
+                // Focus the first link in the opened menu
+                const firstLink = navLinks.querySelector('a');
+                if (firstLink) firstLink.focus();
             }
         }
 
         function closeMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const logoContainer = document.querySelector('.logo-container');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
             
-            if (!navLinks.contains(event.target) && 
-                !mobileMenuBtn.contains(event.target) && 
-                !logoContainer.contains(event.target)) {
-                closeMobileMenu();
-            }
+            navLinks.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
         }
 
         document.addEventListener('click', function(event) {
@@ -1693,7 +1812,9 @@
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const logoContainer = document.querySelector('.logo-container');
             
-            if (!navLinks.contains(event.target) && 
+            // Check if click is outside of the menu and button
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(event.target) && 
                 !mobileMenuBtn.contains(event.target) && 
                 !logoContainer.contains(event.target)) {
                 closeMobileMenu();
