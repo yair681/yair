@@ -727,7 +727,7 @@
             border: 1px solid #2196f3;
         }
 
-        /* Modal General Styles */
+        /* Modal General Styles - תיקון גלילה כאן */
         .modal {
             position: fixed;
             top: 0;
@@ -736,11 +736,9 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
             display: none; /* Initially hidden */
-            justify-content: center;
-            align-items: center;
-            z-index: 5000; /* Higher than other fixed elements */
             overflow-y: auto; /* Enable scrolling for long content */
-            padding: 20px;
+            padding: 50px 20px; /* הוספנו מרווח פנימי גדול יותר */
+            z-index: 5000; /* Higher than other fixed elements */
             direction: rtl; /* Ensure RTL layout */
         }
 
@@ -749,11 +747,12 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            max-width: 800px;
-            width: 95%;
+            max-width: 900px; /* הגדלנו מעט את הרוחב המקסימלי */
+            width: 100%; /* שינוי מ-95% ל-100% כדי שיוכל להתמקם עם margin: auto */
+            margin: 0 auto; /* מרכז אופקית */
             position: relative;
             animation: fadeInModal 0.3s ease-out;
-            margin: 50px 0; /* Add margin for scrolling visibility */
+            min-height: min-content; /* ודא שהתוכן נמתח */
         }
 
         .modal-header h1 {
@@ -1035,8 +1034,13 @@
                 grid-template-columns: 1fr;
             }
             
+            /* תיקון ספציפי למובייל */
+            .modal {
+                padding: 20px 10px; /* צמצום הפדינג במובייל */
+            }
+            
             .modal-content {
-                width: 98%;
+                width: 100%;
                 padding: 20px;
             }
             .modal-header h1 {
@@ -1703,7 +1707,7 @@
             const modal = document.getElementById(modalId);
             const overlay = document.getElementById('overlay');
             
-            modal.style.display = 'flex'; // Show modal
+            modal.style.display = 'block'; // שינוי ל-block/flex כדי להציג את המודל. השתמשתי ב-block במקום flex כי ב-CSS הנוכחי לא השתמשנו במאפיינים של flex על המודל עצמו
             overlay.classList.add('active'); // Show overlay
             
             // Set focus to the close button for accessibility
@@ -1713,7 +1717,7 @@
             }
             
             // Add event listener for ESC key only when modal is open
-            document.addEventListener('keydown', handleEscKey);
+            // (ההאזנה ל-ESC כבר קיימת למטה, אין צורך להוסיף שוב)
         }
 
         function closeModal(modalId) {
@@ -1724,7 +1728,7 @@
             const openModals = document.querySelectorAll('.modal');
             let isAnyModalOpen = false;
             openModals.forEach(m => {
-                if (m.style.display === 'flex') {
+                if (m.style.display === 'block') { // בדיקה האם המודל גלוי
                     isAnyModalOpen = true;
                 }
             });
@@ -1733,8 +1737,7 @@
 
             if (!isAnyModalOpen && !isKeyboardGuideOpen) {
                 document.getElementById('overlay').classList.remove('active');
-                // Remove ESC key listener if nothing is open
-                document.removeEventListener('keydown', handleEscKey);
+                // Remove ESC key listener if nothing is open - זה מתבצע ב-closeAllModals כשצריך
             }
         }
 
@@ -1744,7 +1747,6 @@
             });
             document.getElementById('keyboardGuide').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
-            document.removeEventListener('keydown', handleEscKey);
         }
 
         // Global ESC key handler for modals and keyboard guide
@@ -1755,7 +1757,6 @@
             }
         }
         
-        // This is a cleaner way to handle the single ESC listener for all popups/modals
         document.addEventListener('keydown', handleEscKey);
 
         window.addEventListener('DOMContentLoaded', function() {
