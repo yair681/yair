@@ -436,6 +436,8 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+            /* Adjust for 3 cards if necessary, but auto-fit handles it */
+            justify-content: center; 
         }
 
         .pricing-card {
@@ -1377,26 +1379,6 @@
                         </a>
                     </div>
                     
-                    <div class="pricing-card" tabindex="0">
-                        <h3>חנות מקוונת</h3>
-                        <div class="price">500₪</div>
-                        <div class="price-note">הצגת מוצרים עם קישורים לרכישה חיצונית</div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check" aria-hidden="true"></i> עיצוב חנות מקצועי</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> קטלוג מוצרים מסודר</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> קישורים לרכישה חיצונית</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> התאמה מלאה למובייל</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> אינטגרציה עם WhatsApp לעסקים</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> SEO מתקדם</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> תמיכה טכנית 14 יום</li>
-                            <li><i class="fas fa-check" aria-hidden="true"></i> עזרה בהגדרת מערכת רכישה חיצונית</li>
-                        </ul>
-                        <a href="https://wa.me/972522091733?text=היי%20יאיר,%20אני%20מעוניין%20לשמוע%20פרטים%20על%20חבילת%20חנות%20מקוונת" target="_blank" class="cta-button" aria-label="בחר בחבילת חנות מקוונת">
-                            <i class="fas fa-store" aria-hidden="true"></i>
-                            בחר בחבילה
-                        </a>
-                    </div>
-                    
                     <div class="pricing-card popular" tabindex="0">
                         <div class="popular-badge">הכי פופולרי</div>
                         <h3>אתר מקצועי</h3>
@@ -1441,6 +1423,7 @@
                 </div>
                 
                 <div style="text-align: center; margin-top: 2rem; color: #666; font-size: 0.9rem;">
+                    <p><strong>שימו לב: כל המחירים אינם כוללים דומיין ואחסון.</strong></p>
                     <p>כל המחירים כוללים מע"מ. מחירים סופיים לפי דרישות הפרויקט.</p>
                     <p>כל האתרים כוללים קרדיט "נבנה על ידי יאיר" עם קישור לאתר זה.</p>
                 </div>
@@ -1695,10 +1678,14 @@
 
         function closeMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const logoContainer = document.querySelector('.logo-container');
             
-            navLinks.classList.remove('active');
-            menuBtn.setAttribute('aria-expanded', 'false');
+            if (!navLinks.contains(event.target) && 
+                !mobileMenuBtn.contains(event.target) && 
+                !logoContainer.contains(event.target)) {
+                closeMobileMenu();
+            }
         }
 
         document.addEventListener('click', function(event) {
